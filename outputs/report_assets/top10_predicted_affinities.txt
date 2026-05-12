@@ -1,0 +1,14 @@
+Top 10 Predicted Binding Affinities
+===================================
+
+Rank  Run Name                          PDB ID    Predicted     True          Abs Error     
+1     crossgraph_attention_5000_e40     4kb9      10.0653       11.0000       0.9347        
+2     crossgraph_attention_5000_e40     4yml      9.8368        8.3468        1.4900        
+3     crossgraph_attention_5000_e40     3o9d      9.8156        10.7212       0.9056        
+4     crossgraph_attention_5000_e40     4ll3      9.7829        11.5686       1.7857        
+5     crossgraph_5000_e40               4kb9      9.7564        11.0000       1.2436        
+6     crossgraph_5000_e40               4k6z      9.6634        8.6990        0.9644        
+7     crossgraph_attention_5000_e40     5kqy      9.5348        9.2924        0.2424        
+8     crossgraph_attention_5000_e40     4hdb      9.5340        8.0506        1.4834        
+9     crossgraph_attention_5000_e40     4flh      9.3666        9.0000        0.3666        
+10    crossgraph_5000_e40               5kqy      9.2519        9.2924        0.0405        

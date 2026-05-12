@@ -1,0 +1,53 @@
+# Python caches and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Local datasets and large experiment artifacts
+data/
+outputs/
+!outputs/
+outputs/*
+
+# Keep selected shareable outputs for mentor review
+!outputs/comparison*.txt
+!outputs/report_assets/
+!outputs/report_assets/*.csv
+!outputs/report_assets/*.txt
+!outputs/report_assets/*.png
+!outputs/paper_figures/
+!outputs/paper_figures/*.png
+!outputs/vina_validation/
+!outputs/vina_validation/*.json
+!outputs/vina_validation/*.txt
+
+# Explicitly keep logs ignored
+outputs/logs/
+
+# Jupyter / notebook checkpoints
+.ipynb_checkpoints/
+
+# Test and coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build / packaging artifacts
+build/
+dist/
+*.egg-info/
+
+# IDE / editor files
+.vscode/
+.idea/
+*.code-workspace
+
+# OS noise
+.DS_Store
+Thumbs.db

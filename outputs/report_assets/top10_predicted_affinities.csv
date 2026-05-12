@@ -1,0 +1,11 @@
+rank,run_name,pdb_id,predicted_affinity,true_affinity,absolute_error
+1,crossgraph_attention_5000_e40,4kb9,10.065273,11.000000,0.934727
+2,crossgraph_attention_5000_e40,4yml,9.836828,8.346787,1.490041
+3,crossgraph_attention_5000_e40,3o9d,9.815623,10.721247,0.905623
+4,crossgraph_attention_5000_e40,4ll3,9.782945,11.568636,1.785691
+5,crossgraph_5000_e40,4kb9,9.756389,11.000000,1.243611
+6,crossgraph_5000_e40,4k6z,9.663402,8.698970,0.964432
+7,crossgraph_attention_5000_e40,5kqy,9.534788,9.292430,0.242358
+8,crossgraph_attention_5000_e40,4hdb,9.533960,8.050610,1.483351
+9,crossgraph_attention_5000_e40,4flh,9.366637,9.000000,0.366637
+10,crossgraph_5000_e40,5kqy,9.251916,9.292430,0.040514

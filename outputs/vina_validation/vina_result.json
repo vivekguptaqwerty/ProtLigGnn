@@ -1,0 +1,10 @@
+{
+  "protein_pdb": "data\\pdbbind2020\\pdbbind_subset\\2011-2019\\2l3r\\2l3r_protein.pdb",
+  "ligand_file": "data\\pdbbind2020\\pdbbind_subset\\2011-2019\\2l3r\\2l3r_ligand.sdf",
+  "checkpoint": "outputs\\best_protliggnn.pt",
+  "device": "cpu",
+  "protliggnn_predicted_affinity": 6.105154037475586,
+  "vina_score": null,
+  "docking_status": "vina_not_installed",
+  "vina_version": null
+}
