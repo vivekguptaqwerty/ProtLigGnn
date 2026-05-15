@@ -1,49 +1,72 @@
-# Python caches and compiled files
+# Python runtime artifacts
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+*.so
 
-# Virtual environments
-venv/
+# Virtual environments and local dependency drops
 .venv/
+venv/
 env/
+ENV/
+python_deps/
 
-# Local datasets and large experiment artifacts
+# Local configuration and secrets
+.env
+.env.*
+*.local
+
+# Datasets and external scientific assets
 data/
-outputs/
-!outputs/
+*.pdb
+*.pdbqt
+*.sdf
+*.mol2
+
+# Model checkpoints and generated tensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Generated experiment outputs
 outputs/*
 
-# Keep selected shareable outputs for mentor review
-!outputs/comparison*.txt
-!outputs/report_assets/
-!outputs/report_assets/*.csv
-!outputs/report_assets/*.txt
-!outputs/report_assets/*.png
-!outputs/paper_figures/
-!outputs/paper_figures/*.png
-!outputs/vina_validation/
-!outputs/vina_validation/*.json
-!outputs/vina_validation/*.txt
+# Keep only compact final summaries
+!outputs/
+!outputs/final_research_package/
+!outputs/final_research_package/*.md
+!outputs/final_research_package/*.txt
+!outputs/final_research_package/*.csv
 
-# Explicitly keep logs ignored
-outputs/logs/
+# Generated manuscripts, local paper drafts, and one-off document builders
+*.docx
+*.pdf
+paper_draft.md
+generate_paper_docx.py
+generate_arch_diagram.py
 
-# Jupyter / notebook checkpoints
+# Generated figures, docking poses, logs, and intermediate reports
+*.png
+*.svg
+*.log
+*.tmp
+*.bak
+
+# Jupyter and test artifacts
 .ipynb_checkpoints/
-
-# Test and coverage artifacts
 .pytest_cache/
 .coverage
+coverage.xml
 htmlcov/
 
-# Build / packaging artifacts
+# Build and packaging artifacts
 build/
 dist/
 *.egg-info/
 
-# IDE / editor files
+# IDE/editor files
 .vscode/
 .idea/
 *.code-workspace
@@ -51,3 +74,4 @@ dist/
 # OS noise
 .DS_Store
 Thumbs.db
+desktop.ini

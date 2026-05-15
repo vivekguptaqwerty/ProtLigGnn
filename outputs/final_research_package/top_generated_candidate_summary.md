@@ -1,0 +1,27 @@
+# Top Generated Candidate Summary
+
+Generated candidates were ranked with GAPS before docking. GAPS combines normalized ProtLigGNN affinity, novelty, QED, and diversity.
+
+## Best Docked Generated Candidate
+
+- SMILES: NS(=O)(=O)c1cccc(-c2cc(C(F)(F)F)ccc2O)c1
+- Predicted affinity: 7.368354320526123
+- GAPS: 0.789529197461591
+- QED: 0.8934446753782329
+- Lipinski violations: 0
+- Vina score: -7.8
+
+## Top Candidates
+
+|smiles|predicted_affinity|gaps|qed|lipinski_violations|vina_score|
+|---|---|---|---|---|---|
+|Cc1cccc(C(=O)NS(=O)(=O)c2cccc(C)c2)c1|7.0352373123168945|0.8775614582087589|0.943513556341748|0|-7.7|
+|O=S(=O)(NC1CCCCC1)c1sccc1F|7.224965572357178|0.8579781663296215|0.9104092287525518|0|-6.5|
+|COc1ccc(S(=O)(=O)Nc2ccccc2)cn1|7.321709632873535|0.8533439935407812|0.9152531359625499|0|-6.6|
+|O=S(=O)(Nc1ccccc1)c1cccc(Br)c1|6.94076681137085|0.8401906989496897|0.9454441902740549|0|-7.3|
+|O=S(=O)(Nc1cccc(C(F)(F)F)c1)c1cccc(Cl)c1|7.216756343841553|0.8269930392390572|0.9151114964641308|0|-7.4|
+|COc1cc(C#N)ccc1C(=O)NCC1=CC=C2N=CC=C12|6.843307018280029|0.8206528694602506|0.9230711853670776|0|-6.5|
+|O=c1[nH]c(S(=O)(=O)N2CCC[C@@H]2c2ccccc2)ccc1O|7.145064353942871|0.8141296144288162|0.8986603275982149|0|-7.6|
+|NS(=O)(=O)c1cccc(-c2cc(C(F)(F)F)ccc2O)c1|7.368354320526123|0.789529197461591|0.8934446753782329|0|-7.8|
+|Cc1ccccc1NS(=O)(=O)c1ccccc1|7.212984561920166|0.7755288284697601|0.9061288808931331|0|-6.7|
+|COc1ccc(S(N)(=O)=O)nc1-c1ccc(Cl)cc1|6.39446496963501|0.774500755941818|0.9399759077706195|0|-6.2|

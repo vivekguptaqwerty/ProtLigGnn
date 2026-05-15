@@ -1,0 +1,16 @@
+|category|metric|value|
+|---|---|---|
+|ProtLigGNN|best_run|no_crossgraph_5000_e40|
+|ProtLigGNN|PCC|0.6714|
+|ProtLigGNN|Spearman|0.6624|
+|ProtLigGNN|RMSE|1.3722|
+|ProtLigGNN|MAE|1.0677|
+|GenAI|generated_count|10000|
+|GenAI|valid_count|6056|
+|GenAI|unique_valid_count|4151|
+|GenAI|novel_unique_count|3894|
+|GenAI|validity_percentage|60.56|
+|GenAI|uniqueness_percentage|68.5435931307794|
+|GenAI|novelty_percentage|93.80872079017104|
+|Docking|best_generated_vina_score|-7.8|
+|Docking|best_generated_smiles|NS(=O)(=O)c1cccc(-c2cc(C(F)(F)F)ccc2O)c1|
