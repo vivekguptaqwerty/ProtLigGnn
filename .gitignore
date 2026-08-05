@@ -5,6 +5,10 @@ __pycache__/
 *.pyd
 *.so
 
+# STRICT LOCAL ARCHIVE (DO NOT PUSH TO GITHUB)
+v5.0/
+v5.0/*
+
 # Virtual environments and local dependency drops
 .venv/
 venv/
