@@ -1,0 +1,77 @@
+{
+  "checks": [
+    {
+      "component": "Dataset Fingerprint",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\dataset_hash.json"
+    },
+    {
+      "component": "Configuration",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\config.json"
+    },
+    {
+      "component": "Config Hash",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\config_hash.txt"
+    },
+    {
+      "component": "Environment",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\environment.json"
+    },
+    {
+      "component": "Environment Freeze",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\requirements.lock"
+    },
+    {
+      "component": "Seeds",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\config.json"
+    },
+    {
+      "component": "Split",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\split\\metadata.json"
+    },
+    {
+      "component": "Split Validation",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\split_validation.json"
+    },
+    {
+      "component": "Checkpoint",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\checkpoint.pt"
+    },
+    {
+      "component": "Manifest",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\manifest.json"
+    },
+    {
+      "component": "Metrics",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\metrics.json"
+    },
+    {
+      "component": "Predictions",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\predictions.csv"
+    },
+    {
+      "component": "Logs",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\experiment.log"
+    },
+    {
+      "component": "Artifacts",
+      "ok": true,
+      "path": "experiments\\hpo_trial_016\\artifact_validation.json"
+    }
+  ],
+  "path": "experiments\\hpo_trial_016\\reproducibility_report.md",
+  "recommendations": [],
+  "score": 100
+}

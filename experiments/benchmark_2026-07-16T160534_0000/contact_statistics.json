@@ -1,0 +1,7 @@
+{
+  "mean_contact_probability": 0.007511214353144169,
+  "std_contact_probability": 0.0044809067621827126,
+  "total_pairs": 230753,
+  "total_predicted_contacts": 0,
+  "total_true_contacts": 1355
+}

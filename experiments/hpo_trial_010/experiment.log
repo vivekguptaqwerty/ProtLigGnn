@@ -1,0 +1,306 @@
+2026-07-12 13:11:16,719 INFO protliggnn - Experiment directory: experiments\hpo_trial_010
+2026-07-12 13:11:16,720 INFO protliggnn - CLI arguments: {'data_dir': 'data/pdbbind2020', 'device': 'cuda', 'epochs': 10, 'batch_size': 8, 'lr': 0.0008151937, 'weight_decay': 5.034861e-06, 'patience': 10, 'seed': 42, 'max_samples': 1000, 'run_name': 'protliggnn_run', 'no_crossgraph': False, 'save_path': 'outputs/best_protliggnn.pt', 'split_strategy': 'random', 'split_dir': 'splits', 'fixed_split_dir': None, 'val_fraction': 0.1, 'test_fraction': 0.1, 'dataset_version': 'pdbbind2020_local', 'experiments_root': 'experiments', 'experiment_dir': None, 'experiment_id': 'hpo_trial_010', 'num_workers': 0, 'pin_memory': False, 'disable_experiment_tracking': False, 'resume': None, 'allow_duplicate': True, 'hidden_dim': 256, 'dropout': 0.3261, 'optimizer': 'adamw', 'scheduler': 'cosine', 'grad_clip': 5.0, 'no_residual': False, 'no_layernorm': False, 'no_attention': False, 'pooling': 'mean', 'log_level': 'INFO', 'experiment_purpose': 'benchmark', 'research_question': 'Can ProtLigGNN reproducibly predict protein-ligand affinity under this benchmark configuration?', 'author': 'unknown', 'description': '', 'notes': '', 'tags': '', 'expected_outcome': '', 'current_milestone': 'research-infrastructure', 'architecture_version': 'protliggnn-v1', 'research_version': 'benchmark-v2'}
+2026-07-12 13:11:16,722 INFO protliggnn - Loading dataset from D:\ProtLigGnn\data\pdbbind2020
+2026-07-12 13:11:16,722 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,722 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<=17nM' (relation: '<='). Treating as exact value.
+2026-07-12 13:11:16,722 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<=3.5nM' (relation: '<='). Treating as exact value.
+2026-07-12 13:11:16,723 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1.0nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,723 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<10uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,723 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,723 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<=2.0nM' (relation: '<='). Treating as exact value.
+2026-07-12 13:11:16,723 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~10uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,723 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.01nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,723 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<=100nM' (relation: '<='). Treating as exact value.
+2026-07-12 13:11:16,724 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<21nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,724 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~0.1pM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,725 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<=100uM' (relation: '<='). Treating as exact value.
+2026-07-12 13:11:16,725 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~10pM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,725 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1pM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,725 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1pM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,726 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.010uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,726 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~0.1uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,726 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.3uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,727 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.003uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,727 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.05uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,727 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.05uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,728 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~5mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,728 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.12nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,728 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~0.69pM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,728 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~11pM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,728 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~28pM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,729 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.003uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,729 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<20nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,729 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<5nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,729 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,729 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,729 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,730 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,731 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<100nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,731 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<2pM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,732 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~50uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,732 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<=0.6nM' (relation: '<='). Treating as exact value.
+2026-07-12 13:11:16,733 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~100uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,733 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~100uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,733 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.04nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,735 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~10nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,736 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.5nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,738 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~40mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,738 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<10uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,739 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1.0nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,739 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,739 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<3nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,739 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<=1nM' (relation: '<='). Treating as exact value.
+2026-07-12 13:11:16,740 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,740 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,740 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,741 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,742 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,742 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~20mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,742 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,742 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1mM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,742 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<60uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,743 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~300uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,743 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<50.0nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,744 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~5mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,744 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~5uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,744 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.001uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,744 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.003uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,744 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.004uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,745 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,745 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2.13nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,745 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<3nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,745 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<3nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,745 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<4nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,745 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<5nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,745 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<5nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,746 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.1mM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,747 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,747 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<100nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,747 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,748 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~102uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,748 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~125nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,748 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,748 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,748 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~5uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,748 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~74.3uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,748 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~85nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,748 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,749 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~2uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,749 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~55mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,749 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~55mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,749 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.01uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,749 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.01uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,749 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2.5nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,751 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~0.5uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,751 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~30nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,751 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,751 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,751 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<6nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~10nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~160nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~2uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~5uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.05uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,753 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<2nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,754 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~10uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,754 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~14uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,754 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~50uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,754 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,754 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<4nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,756 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~10uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,756 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~10uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,756 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,756 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~30uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,756 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~30uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,756 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~38nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,756 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.003uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,756 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,758 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1.7uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~200nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~200nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~3.6pM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~400nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~51nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~9.6uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.01nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.0845uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.2nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.2nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<10mM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,759 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<2mM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,760 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~1.3uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,760 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~1.3uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~67uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.001uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.086uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.086uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.086uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.086uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.086uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1.37uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<15nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,761 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,764 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1.3mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,764 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~10000nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,764 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~33uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,764 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~4mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,764 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.03uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,764 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.05nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,764 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,764 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,764 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,766 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~185uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,766 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~23mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,766 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~2uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,767 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~300nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,767 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~364nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,767 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~8.11uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,767 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.0005uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,767 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.01nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,767 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.025nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,768 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~5uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,768 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.004uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,768 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,768 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,768 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,768 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,768 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,768 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,768 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<25nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,768 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<3nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,770 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~100uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,770 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,770 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,772 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~0.13uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,772 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1.5uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,772 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~200uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,772 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~50uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,772 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.001uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,772 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.01nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.001uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.005uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.2uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.32nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.3nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.3nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1.13nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<25nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<3nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<50nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,773 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<50nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,774 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<50nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,775 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~0.8mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,775 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~0.8mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,775 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~100uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,775 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~6nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,775 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<2nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1.8uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~100nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~100nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~12uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~12uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~13uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~300nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~500uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~500uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~600uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~9uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.01uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,777 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.05nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,778 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,778 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,778 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,778 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.030uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,779 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,779 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<40nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,779 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<5nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,781 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~0.5uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,781 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1.8uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,781 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1mM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,781 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~700nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,781 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.001nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,781 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.10uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,781 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.4uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,781 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~0.2uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~120nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~23uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~23uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~23uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~24uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~25uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~3nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~5uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~7nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~80uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1.0nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1.3nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,783 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,784 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<15nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,784 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,784 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,784 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,784 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,784 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,786 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~330uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,786 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~450uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,786 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.8nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,786 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1.26nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,786 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<2.3nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,786 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<55uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,786 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<55uM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,788 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~11uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,788 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~200nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,788 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~25uM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,788 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~2nM' (relation: '~'). Treating as exact value.
+2026-07-12 13:11:16,788 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.005nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,788 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.005nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,788 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.005nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:16,788 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.9nM' (relation: '<'). Treating as exact value.
+2026-07-12 13:11:17,597 INFO protliggnn - Found 1000 candidate complexes with labels and matching files before validation.
+2026-07-12 13:11:17,599 INFO protliggnn - Found graph cache at data\pdbbind2020\processed_dataset.pt. Validating...
+2026-07-12 13:11:17,624 INFO protliggnn - Loading graphs from cache file...
+2026-07-12 13:11:17,948 INFO protliggnn - Cache successfully validated. Loaded 1000 pre-built graphs.
+2026-07-12 13:11:17,954 INFO protliggnn - Dataset split sizes: train=800 val=100 test=100 (random)
+2026-07-12 13:11:27,105 INFO protliggnn - Epoch 001 train loss=5.3346 PCC=-0.0035 Spearman=0.0162 RMSE=2.3097 MAE=1.7811 R2=-0.7075
+2026-07-12 13:11:27,105 INFO protliggnn - Epoch 001 val loss=4.5163 PCC=0.3681 Spearman=0.3579 RMSE=2.1252 MAE=1.7676 R2=-0.4422
+2026-07-12 13:11:27,173 INFO protliggnn - Saved checkpoint for epoch 1 with validation RMSE 2.125150303299875.
+2026-07-12 13:11:35,833 INFO protliggnn - Epoch 002 train loss=3.8776 PCC=0.1245 Spearman=0.1218 RMSE=1.9692 MAE=1.5638 R2=-0.2411
+2026-07-12 13:11:35,833 INFO protliggnn - Epoch 002 val loss=2.7774 PCC=0.4956 Spearman=0.4861 RMSE=1.6665 MAE=1.4100 R2=0.1131
+2026-07-12 13:11:35,905 INFO protliggnn - Saved checkpoint for epoch 2 with validation RMSE 1.6665462183040585.
+2026-07-12 13:11:44,245 INFO protliggnn - Epoch 003 train loss=3.7947 PCC=0.1620 Spearman=0.1930 RMSE=1.9480 MAE=1.5256 R2=-0.2146
+2026-07-12 13:11:44,245 INFO protliggnn - Epoch 003 val loss=3.2222 PCC=0.5856 Spearman=0.5743 RMSE=1.7950 MAE=1.4764 R2=-0.0289
+2026-07-12 13:11:52,259 INFO protliggnn - Epoch 004 train loss=3.7592 PCC=0.2122 Spearman=0.2027 RMSE=1.9389 MAE=1.5425 R2=-0.2032
+2026-07-12 13:11:52,259 INFO protliggnn - Epoch 004 val loss=2.2041 PCC=0.5747 Spearman=0.5867 RMSE=1.4846 MAE=1.2549 R2=0.2962
+2026-07-12 13:11:52,316 INFO protliggnn - Saved checkpoint for epoch 4 with validation RMSE 1.4846273717332927.
+2026-07-12 13:12:00,985 INFO protliggnn - Epoch 005 train loss=3.4912 PCC=0.2487 Spearman=0.2399 RMSE=1.8685 MAE=1.5027 R2=-0.1174
+2026-07-12 13:12:00,985 INFO protliggnn - Epoch 005 val loss=2.7103 PCC=0.6289 Spearman=0.6164 RMSE=1.6463 MAE=1.3645 R2=0.1345
+2026-07-12 13:12:15,767 INFO protliggnn - Epoch 006 train loss=3.2913 PCC=0.2928 Spearman=0.2927 RMSE=1.8142 MAE=1.4412 R2=-0.0535
+2026-07-12 13:12:15,767 INFO protliggnn - Epoch 006 val loss=1.9325 PCC=0.6441 Spearman=0.6303 RMSE=1.3901 MAE=1.1822 R2=0.3829
+2026-07-12 13:12:15,827 INFO protliggnn - Saved checkpoint for epoch 6 with validation RMSE 1.3901404502597206.
+2026-07-12 13:12:23,761 INFO protliggnn - Epoch 007 train loss=3.0807 PCC=0.3538 Spearman=0.3419 RMSE=1.7552 MAE=1.3817 R2=0.0139
+2026-07-12 13:12:23,761 INFO protliggnn - Epoch 007 val loss=2.9319 PCC=0.6172 Spearman=0.6360 RMSE=1.7123 MAE=1.3867 R2=0.0638
+2026-07-12 13:12:32,304 INFO protliggnn - Epoch 008 train loss=2.9711 PCC=0.3618 Spearman=0.3455 RMSE=1.7237 MAE=1.3857 R2=0.0490
+2026-07-12 13:12:32,304 INFO protliggnn - Epoch 008 val loss=2.3430 PCC=0.6082 Spearman=0.6011 RMSE=1.5307 MAE=1.2752 R2=0.2518
+2026-07-12 13:12:49,445 INFO protliggnn - Epoch 009 train loss=2.7663 PCC=0.4269 Spearman=0.4269 RMSE=1.6632 MAE=1.3389 R2=0.1146
+2026-07-12 13:12:49,445 INFO protliggnn - Epoch 009 val loss=2.0072 PCC=0.6092 Spearman=0.6140 RMSE=1.4168 MAE=1.1953 R2=0.3590
+2026-07-12 13:13:01,027 INFO protliggnn - Epoch 010 train loss=2.6753 PCC=0.4498 Spearman=0.4411 RMSE=1.6356 MAE=1.2988 R2=0.1437
+2026-07-12 13:13:01,028 INFO protliggnn - Epoch 010 val loss=2.0022 PCC=0.6080 Spearman=0.6085 RMSE=1.4150 MAE=1.1929 R2=0.3606
+2026-07-12 13:13:01,074 INFO protliggnn - Loaded best model from epoch 6 at D:\ProtLigGnn\outputs\best_protliggnn.pt
+2026-07-12 13:13:01,545 INFO protliggnn - Test loss=2.6100 PCC=0.4109 Spearman=0.4410 RMSE=1.6155 MAE=1.2518 R2=0.1419
+2026-07-12 13:13:03,044 INFO protliggnn - Wrote metrics, predictions, plots, and error analysis.
+2026-07-12 13:13:03,069 INFO protliggnn - Experiment artifacts saved to D:\ProtLigGnn\experiments\hpo_trial_010

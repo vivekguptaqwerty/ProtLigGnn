@@ -1,0 +1,1 @@
+from ligprotgnnx.inference.pipeline import PredictionResult, UnifiedInferencePipeline

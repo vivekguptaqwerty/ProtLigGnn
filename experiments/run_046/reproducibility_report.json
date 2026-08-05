@@ -1,0 +1,77 @@
+{
+  "checks": [
+    {
+      "component": "Dataset Fingerprint",
+      "ok": true,
+      "path": "experiments\\run_046\\dataset_hash.json"
+    },
+    {
+      "component": "Configuration",
+      "ok": true,
+      "path": "experiments\\run_046\\config.json"
+    },
+    {
+      "component": "Config Hash",
+      "ok": true,
+      "path": "experiments\\run_046\\config_hash.txt"
+    },
+    {
+      "component": "Environment",
+      "ok": true,
+      "path": "experiments\\run_046\\environment.json"
+    },
+    {
+      "component": "Environment Freeze",
+      "ok": true,
+      "path": "experiments\\run_046\\requirements.lock"
+    },
+    {
+      "component": "Seeds",
+      "ok": true,
+      "path": "experiments\\run_046\\config.json"
+    },
+    {
+      "component": "Split",
+      "ok": true,
+      "path": "experiments\\run_046\\split\\metadata.json"
+    },
+    {
+      "component": "Split Validation",
+      "ok": true,
+      "path": "experiments\\run_046\\split_validation.json"
+    },
+    {
+      "component": "Checkpoint",
+      "ok": true,
+      "path": "experiments\\run_046\\checkpoint.pt"
+    },
+    {
+      "component": "Manifest",
+      "ok": true,
+      "path": "experiments\\run_046\\manifest.json"
+    },
+    {
+      "component": "Metrics",
+      "ok": true,
+      "path": "experiments\\run_046\\metrics.json"
+    },
+    {
+      "component": "Predictions",
+      "ok": true,
+      "path": "experiments\\run_046\\predictions.csv"
+    },
+    {
+      "component": "Logs",
+      "ok": true,
+      "path": "experiments\\run_046\\experiment.log"
+    },
+    {
+      "component": "Artifacts",
+      "ok": true,
+      "path": "experiments\\run_046\\artifact_validation.json"
+    }
+  ],
+  "path": "experiments\\run_046\\reproducibility_report.md",
+  "recommendations": [],
+  "score": 100
+}

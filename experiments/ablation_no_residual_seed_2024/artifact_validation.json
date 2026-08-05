@@ -1,0 +1,115 @@
+{
+  "created_utc": "2026-07-12T17:53:32+00:00",
+  "directories": {
+    "plots": {
+      "exists": true,
+      "file_count": 7,
+      "path": "experiments\\ablation_no_residual_seed_2024\\plots",
+      "valid": true
+    }
+  },
+  "files": {
+    "checkpoint": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\checkpoint.pt",
+      "size_bytes": 4443456
+    },
+    "config": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\config.json",
+      "size_bytes": 1453
+    },
+    "config_hash": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\config_hash.txt",
+      "size_bytes": 66
+    },
+    "dataset_hash": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\dataset_hash.json",
+      "size_bytes": 5713
+    },
+    "environment": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\environment.json",
+      "size_bytes": 1203
+    },
+    "environment_lock": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\environment.lock",
+      "size_bytes": 1203
+    },
+    "lifecycle": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\experiment_lifecycle.md",
+      "size_bytes": 342
+    },
+    "logs": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\experiment.log",
+      "size_bytes": 48113
+    },
+    "manifest": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\manifest.json",
+      "size_bytes": 4733
+    },
+    "metadata": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\metadata.json",
+      "size_bytes": 449
+    },
+    "metrics": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\metrics.json",
+      "size_bytes": 687
+    },
+    "pip_freeze": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\pip_freeze.txt",
+      "size_bytes": 1279
+    },
+    "predictions": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\predictions.csv",
+      "size_bytes": 10000
+    },
+    "requirements_lock": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\requirements.lock",
+      "size_bytes": 1327
+    },
+    "split_manifest": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\split\\metadata.json",
+      "size_bytes": 15639
+    },
+    "split_test_ids": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\split\\test_ids.txt",
+      "size_bytes": 600
+    },
+    "split_train_ids": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\split\\train_ids.txt",
+      "size_bytes": 4800
+    },
+    "split_val_ids": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\split\\val_ids.txt",
+      "size_bytes": 600
+    },
+    "split_validation": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\split_validation.json",
+      "size_bytes": 350
+    },
+    "training_history": {
+      "exists": true,
+      "path": "experiments\\ablation_no_residual_seed_2024\\training_history.csv",
+      "size_bytes": 5271
+    }
+  },
+  "missing_or_invalid": [],
+  "valid": true
+}

@@ -1,0 +1,48 @@
+{
+  "hardware": {
+    "cpu_count": 12,
+    "gpu": [
+      {
+        "capability": [
+          8,
+          6
+        ],
+        "index": 0,
+        "memory_gb": 6.0,
+        "name": "NVIDIA GeForce RTX 3050 6GB Laptop GPU"
+      }
+    ],
+    "ram_gb": 15.731
+  },
+  "packages": {
+    "biopython": "1.87",
+    "matplotlib": "3.11.0",
+    "numpy": "1.26.4",
+    "rdkit": "2026.3.3",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.17.1",
+    "torch": "2.3.1+cu121",
+    "torch-geometric": "2.8.0",
+    "torch-scatter": "2.1.2+pt23cu121",
+    "torch-sparse": "0.6.18+pt23cu121",
+    "tqdm": "4.68.4"
+  },
+  "platform": {
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "release": "10",
+    "system": "Windows",
+    "version": "10.0.26200"
+  },
+  "python": {
+    "executable": "D:\\ProtLigGnn\\venv\\Scripts\\python.exe",
+    "version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]"
+  },
+  "timestamp_utc": "2026-07-12T17:59:26+00:00",
+  "torch_runtime": {
+    "cuda_available": true,
+    "cuda_version": "12.1",
+    "cudnn_version": 8907,
+    "version": "2.3.1+cu121"
+  }
+}

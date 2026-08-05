@@ -1,0 +1,2 @@
+pdb_id,true_affinity,predicted_affinity,residual,absolute_error,squared_error,rank_best,rank_worst,category
+2l65,4.221848964691162,3.7746806144714355,-0.44716835021972656,0.44716835021972656,0.19995953343823203,1,1,outlier

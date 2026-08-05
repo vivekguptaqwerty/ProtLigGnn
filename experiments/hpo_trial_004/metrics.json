@@ -1,0 +1,20 @@
+{
+  "best_epoch": 10,
+  "bias": -0.1632434606552124,
+  "config_hash": "654d1765475a522b3b36dddd65685a412879e2c092cda345a29e22c49adc8363",
+  "dataset_hash": "4bc486e5bfabc33a2bd6ea8d39cd73bee5fc6e9ba5ee68d766fab28395679eb8",
+  "dataset_version": "pdbbind2020_local",
+  "effective_split_strategy": "random",
+  "loss": 2.8024356985092163,
+  "mae": 1.3377740335464479,
+  "mean_prediction": 5.8956163883209225,
+  "median_absolute_error": 1.1649820804595947,
+  "mse": 2.8024357218873672,
+  "pcc": 0.3700558185143264,
+  "r2": 0.07868417561570007,
+  "rmse": 1.6740477059771526,
+  "seed": 42,
+  "spearman": 0.4017054013024376,
+  "split_strategy": "random",
+  "test_count": 100
+}

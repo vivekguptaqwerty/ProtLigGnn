@@ -1,0 +1,101 @@
+{
+  "overall_mae": 1.2740831930856198,
+  "overall_rmse": 1.5957609716421033,
+  "overall_pearson_r": 0.4960396564124469,
+  "regression_to_mean_slope": -0.6637807583858742,
+  "regression_to_mean_r_value": -0.7482413104863299,
+  "high_affinity_mean_residual": -1.7163310313301952,
+  "low_affinity_mean_residual": 1.6368487907286309,
+  "outliers": [
+    {
+      "pdb_id": "2xpk",
+      "true_affinity": 11.301030158996582,
+      "pred_mean": 6.4331605434417725,
+      "residual": -4.86786961555481,
+      "abs_error": 4.86786961555481,
+      "ligand_size": 53,
+      "pocket_size": 36
+    },
+    {
+      "pdb_id": "3rlb",
+      "true_affinity": 9.920818328857422,
+      "pred_mean": 5.195547103881836,
+      "residual": -4.725271224975586,
+      "abs_error": 4.725271224975586,
+      "ligand_size": 35,
+      "pocket_size": 34
+    },
+    {
+      "pdb_id": "2xn7",
+      "true_affinity": 10.0,
+      "pred_mean": 5.354665756225586,
+      "residual": -4.645334243774414,
+      "abs_error": 4.645334243774414,
+      "ligand_size": 71,
+      "pocket_size": 30
+    },
+    {
+      "pdb_id": "2xiy",
+      "true_affinity": 2.443697452545166,
+      "pred_mean": 6.852824687957764,
+      "residual": 4.409127235412598,
+      "abs_error": 4.409127235412598,
+      "ligand_size": 20,
+      "pocket_size": 22
+    },
+    {
+      "pdb_id": "3p7i",
+      "true_affinity": 7.701147079467773,
+      "pred_mean": 3.311952352523804,
+      "residual": -4.38919472694397,
+      "abs_error": 4.38919472694397,
+      "ligand_size": 15,
+      "pocket_size": 21
+    },
+    {
+      "pdb_id": "3rbu",
+      "true_affinity": 9.431797981262209,
+      "pred_mean": 5.243144035339356,
+      "residual": -4.188653945922852,
+      "abs_error": 4.188653945922852,
+      "ligand_size": 24,
+      "pocket_size": 31
+    },
+    {
+      "pdb_id": "2yki",
+      "true_affinity": 9.455931663513184,
+      "pred_mean": 5.295323371887207,
+      "residual": -4.160608291625977,
+      "abs_error": 4.160608291625977,
+      "ligand_size": 52,
+      "pocket_size": 37
+    },
+    {
+      "pdb_id": "3ao4",
+      "true_affinity": 2.0705809593200684,
+      "pred_mean": 6.198395252227783,
+      "residual": 4.127814292907715,
+      "abs_error": 4.127814292907715,
+      "ligand_size": 27,
+      "pocket_size": 27
+    },
+    {
+      "pdb_id": "2ll6",
+      "true_affinity": 10.0,
+      "pred_mean": 5.89046573638916,
+      "residual": -4.10953426361084,
+      "abs_error": 4.10953426361084,
+      "ligand_size": 302,
+      "pocket_size": 57
+    },
+    {
+      "pdb_id": "2yiv",
+      "true_affinity": 2.779891967773437,
+      "pred_mean": 6.700777053833008,
+      "residual": 3.9208850860595694,
+      "abs_error": 3.9208850860595694,
+      "ligand_size": 20,
+      "pocket_size": 23
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+
+version: v4.0
+phase: 5.5
+date: 2026-07-18
+dataset: PDBbind
+rmse: 1.5022
+checkpoint: ligprotgnnx_v4.pt
+description: Integrated production baseline
+dependencies:
+  torch: 2.2.0
+  pyg: 2.4.0

@@ -1,0 +1,5 @@
+{
+  "summary":  "Hyperparameter optimization study report documenting the 20-trial Optuna Bayesian search, parameter importances, and selection of the top 3 finalists.",
+  "updatedAt":  "2026-07-12T08:02:09.272355100Z",
+  "userFacing":  true
+}

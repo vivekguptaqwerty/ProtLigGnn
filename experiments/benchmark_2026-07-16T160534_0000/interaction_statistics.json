@@ -1,0 +1,6 @@
+{
+    "distance_correlation": -0.421,
+    "topk_localization": 0.7629,
+    "contact_recall": 0.7629,
+    "attention_entropy": 3.1245
+}

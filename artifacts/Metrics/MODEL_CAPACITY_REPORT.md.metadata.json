@@ -1,0 +1,5 @@
+{
+  "summary":  "Model capacity and computational efficiency report for ProtLigGNN model, documenting parameter scaling, optimizer memory budgets, and GPU throughput.",
+  "updatedAt":  "2026-07-12T16:31:43.639559200Z",
+  "userFacing":  true
+}

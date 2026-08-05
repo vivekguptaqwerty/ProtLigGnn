@@ -1,0 +1,7 @@
+
+experiment_id: Phase_5.2
+project: LigProtGNN-X
+seed: 42
+learning_rate: 0.0001
+batch_size: 32
+epochs: 50

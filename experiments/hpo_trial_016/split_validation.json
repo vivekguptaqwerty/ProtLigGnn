@@ -1,0 +1,21 @@
+{
+  "counts": {
+    "test": 100,
+    "train": 800,
+    "val": 100
+  },
+  "created_utc": "2026-07-12T07:52:54+00:00",
+  "duplicate_ids": {
+    "test": [],
+    "train": [],
+    "val": []
+  },
+  "missing_ids": [],
+  "orphan_ids": [],
+  "overlap": {
+    "train_test": [],
+    "train_val": [],
+    "val_test": []
+  },
+  "valid": true
+}

@@ -1,0 +1,79 @@
+{
+  "checkpoint": "experiments\\run_051\\checkpoint.pt",
+  "config": "experiments\\run_051\\config.json",
+  "created_utc": "2026-07-17T06:16:44+00:00",
+  "environment": "experiments\\run_051\\environment.json",
+  "experiment_dir": "experiments\\run_051",
+  "extra_artifacts": {
+    "artifact_validation": "experiments\\run_051\\artifact_validation.json",
+    "cli_args": "experiments\\run_051\\cli_args.json",
+    "config_fingerprint": "experiments\\run_051\\config_fingerprint.json",
+    "config_hash": "experiments\\run_051\\config_hash.txt",
+    "dataset_hash": "experiments\\run_051\\dataset_hash.json",
+    "dataset_metadata": "experiments\\run_051\\dataset_metadata.json",
+    "environment_locks": {
+      "environment_lock": "experiments\\run_051\\environment.lock",
+      "pip_freeze": "experiments\\run_051\\pip_freeze.txt",
+      "requirements_lock": "experiments\\run_051\\requirements.lock"
+    },
+    "error_analysis_csv": "experiments\\run_051\\error_analysis.csv",
+    "error_analysis_report": "experiments\\run_051\\error_analysis.md",
+    "error_summary": {
+      "average_prediction": 5.1974647521972654,
+      "best_prediction_pdb_ids": [
+        "2ly0",
+        "2liq",
+        "2l65",
+        "2lh8",
+        "2l8r"
+      ],
+      "bias": 0.6015350818634033,
+      "outlier_count": 0,
+      "outlier_threshold": 1.5101949772706351,
+      "sample_count": 5,
+      "top_error_pdb_ids": [
+        "2l8r",
+        "2lh8",
+        "2l65",
+        "2liq",
+        "2ly0"
+      ]
+    },
+    "evaluation_report": "experiments\\run_051\\evaluation_report.md",
+    "experiment_lifecycle": "experiments\\run_051\\experiment_lifecycle.md",
+    "experiment_metadata": "experiments\\run_051\\metadata.json",
+    "git": "experiments\\run_051\\git.json",
+    "legacy_outputs": {
+      "checkpoint": "experiments\\run_051\\checkpoint.pt",
+      "history": "outputs\\epoch_history_protliggnn_benchmark_seed_42.csv",
+      "predictions": "outputs\\test_predictions_protliggnn_benchmark_seed_42.csv",
+      "scatter": "outputs\\scatter_protliggnn_benchmark_seed_42.png",
+      "training_curves": "outputs\\training_curves_protliggnn_benchmark_seed_42.png"
+    },
+    "plot_artifacts": {
+      "calibration_curve": "experiments\\run_051\\plots\\calibration_curve.png",
+      "calibration_curve_csv": "experiments\\run_051\\plots\\calibration_curve.csv",
+      "error_histogram": "experiments\\run_051\\plots\\error_histogram.png",
+      "prediction_histogram": "experiments\\run_051\\plots\\prediction_histogram.png",
+      "prediction_scatter": "experiments\\run_051\\plots\\prediction_scatter.png",
+      "residual_distribution": "experiments\\run_051\\plots\\residual_distribution.png",
+      "residual_scatter": "experiments\\run_051\\plots\\residual_scatter.png"
+    },
+    "reproducibility_report": "experiments\\run_051\\reproducibility_report.md",
+    "reproducibility_report_json": "experiments\\run_051\\reproducibility_report.json",
+    "reproducibility_score": 100,
+    "split_validation": "experiments\\run_051\\split_validation.json"
+  },
+  "logs": "experiments\\run_051\\experiment.log",
+  "metrics": "experiments\\run_051\\metrics.json",
+  "plots": "experiments\\run_051\\plots",
+  "predictions": "experiments\\run_051\\predictions.csv",
+  "split": {
+    "directory": "experiments\\run_051\\split",
+    "metadata": "experiments\\run_051\\split\\metadata.json",
+    "test_ids": "experiments\\run_051\\split\\test_ids.txt",
+    "train_ids": "experiments\\run_051\\split\\train_ids.txt",
+    "val_ids": "experiments\\run_051\\split\\val_ids.txt"
+  },
+  "training_history": "experiments\\run_051\\training_history.csv"
+}

@@ -1,0 +1,16 @@
+{
+  "affinity_gates": {
+    "gate_entropy": 0.11474504321813583,
+    "gate_mean": 0.9585821032524109,
+    "gate_sparsity": 0.0034006063360720873,
+    "gate_utilization": 0.9275109171867371,
+    "gate_variance": 0.011274050921201706
+  },
+  "contact_gates": {
+    "gate_entropy": 0.0035747236106544733,
+    "gate_mean": 0.5175642371177673,
+    "gate_sparsity": 0.482421875,
+    "gate_utilization": 0.517578125,
+    "gate_variance": 0.24928593635559082
+  }
+}

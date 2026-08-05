@@ -1,0 +1,102 @@
+# 04 Preprocessing Report: CASF-2016
+
+## Execution Summary
+- **Total Complexes**: 285
+- **Successfully Preprocessed**: 285 / 285 (100.00%)
+- **Preprocessing Failures**: 0
+- **Processing Time**: 21.02 seconds
+- **Fallback Loading Instances**: 92 / 285 (32.28%)
+
+## Fallback Details
+- `1a30`: SDF sanitization failed due to valency error. Loaded `1a30_ligand.mol2` (atoms=49, bonds=48).
+- `1bzc`: SDF sanitization failed due to valency error. Loaded `1bzc_ligand.mol2` (atoms=43, bonds=44).
+- `1c5z`: SDF sanitization failed due to valency error. Loaded `1c5z_ligand.mol2` (atoms=18, bonds=18).
+- `1k1i`: SDF sanitization failed due to valency error. Loaded `1k1i_ligand.mol2` (atoms=64, bonds=67).
+- `1lpg`: SDF sanitization failed due to valency error. Loaded `1lpg_ligand.mol2` (atoms=78, bonds=82).
+- `1o0h`: SDF sanitization failed due to valency error. Loaded `1o0h_ligand.mol2` (atoms=39, bonds=41).
+- `1o3f`: SDF sanitization failed due to valency error. Loaded `1o3f_ligand.mol2` (atoms=43, bonds=46).
+- `1o5b`: SDF sanitization failed due to valency error. Loaded `1o5b_ligand.mol2` (atoms=21, bonds=22).
+- `1owh`: SDF sanitization failed due to valency error. Loaded `1owh_ligand.mol2` (atoms=44, bonds=46).
+- `1oyt`: SDF sanitization failed due to valency error. Loaded `1oyt_ligand.mol2` (atoms=55, bonds=59).
+- `1p1n`: SDF sanitization failed due to valency error. Loaded `1p1n_ligand.mol2` (atoms=29, bonds=29).
+- `1p1q`: SDF sanitization failed due to valency error. Loaded `1p1q_ligand.mol2` (atoms=23, bonds=23).
+- `1qf1`: SDF sanitization failed due to valency error. Loaded `1qf1_ligand.mol2` (atoms=53, bonds=53).
+- `1sqa`: SDF sanitization failed due to valency error. Loaded `1sqa_ligand.mol2` (atoms=54, bonds=57).
+- `1syi`: SDF sanitization failed due to valency error. Loaded `1syi_ligand.mol2` (atoms=30, bonds=31).
+- `1u1b`: SDF sanitization failed due to valency error. Loaded `1u1b_ligand.mol2` (atoms=74, bonds=78).
+- `1vso`: SDF sanitization failed due to valency error. Loaded `1vso_ligand.mol2` (atoms=38, bonds=38).
+- `1w4o`: SDF sanitization failed due to valency error. Loaded `1w4o_ligand.mol2` (atoms=32, bonds=33).
+- `1yc1`: SDF sanitization failed due to valency error. Loaded `1yc1_ligand.mol2` (atoms=42, bonds=45).
+- `1z9g`: SDF sanitization failed due to valency error. Loaded `1z9g_ligand.mol2` (atoms=31, bonds=31).
+- `2al5`: SDF sanitization failed due to valency error. Loaded `2al5_ligand.mol2` (atoms=23, bonds=23).
+- `2hb1`: SDF sanitization failed due to valency error. Loaded `2hb1_ligand.mol2` (atoms=17, bonds=17).
+- `2p4y`: SDF sanitization failed due to valency error. Loaded `2p4y_ligand.mol2` (atoms=61, bonds=65).
+- `2qbp`: SDF sanitization failed due to valency error. Loaded `2qbp_ligand.mol2` (atoms=60, bonds=63).
+- `2qbq`: SDF sanitization failed due to valency error. Loaded `2qbq_ligand.mol2` (atoms=57, bonds=59).
+- `2qbr`: SDF sanitization failed due to valency error. Loaded `2qbr_ligand.mol2` (atoms=42, bonds=44).
+- `2r9w`: SDF sanitization failed due to valency error. Loaded `2r9w_ligand.mol2` (atoms=42, bonds=45).
+- `2wtv`: SDF sanitization failed due to valency error. Loaded `2wtv_ligand.mol2` (atoms=48, bonds=52).
+- `2xb8`: SDF sanitization failed due to valency error. Loaded `2xb8_ligand.mol2` (atoms=39, bonds=40).
+- `2yfe`: SDF sanitization failed due to valency error. Loaded `2yfe_ligand.mol2` (atoms=48, bonds=49).
+- `2zcq`: SDF sanitization failed due to valency error. Loaded `2zcq_ligand.mol2` (atoms=41, bonds=42).
+- `2zcr`: SDF sanitization failed due to valency error. Loaded `2zcr_ligand.mol2` (atoms=52, bonds=53).
+- `2zda`: SDF sanitization failed due to valency error. Loaded `2zda_ligand.mol2` (atoms=58, bonds=60).
+- `2zy1`: SDF sanitization failed due to valency error. Loaded `2zy1_ligand.mol2` (atoms=42, bonds=43).
+- `3ag9`: SDF sanitization failed due to valency error. Loaded `3ag9_ligand.mol2` (atoms=140, bonds=142).
+- `3bgz`: SDF sanitization failed due to valency error. Loaded `3bgz_ligand.mol2` (atoms=38, bonds=41).
+- `3bv9`: SDF sanitization failed due to valency error. Loaded `3bv9_ligand.mol2` (atoms=98, bonds=101).
+- `3cj4`: SDF sanitization failed due to valency error. Loaded `3cj4_ligand.mol2` (atoms=47, bonds=48).
+- `3dxg`: SDF sanitization failed due to valency error. Loaded `3dxg_ligand.mol2` (atoms=32, bonds=33).
+- `3ehy`: SDF sanitization failed due to valency error. Loaded `3ehy_ligand.mol2` (atoms=29, bonds=29).
+- `3f3a`: SDF sanitization failed due to valency error. Loaded `3f3a_ligand.mol2` (atoms=27, bonds=28).
+- `3f3c`: SDF sanitization failed due to valency error. Loaded `3f3c_ligand.mol2` (atoms=23, bonds=23).
+- `3f3d`: SDF sanitization failed due to valency error. Loaded `3f3d_ligand.mol2` (atoms=20, bonds=19).
+- `3f3e`: SDF sanitization failed due to valency error. Loaded `3f3e_ligand.mol2` (atoms=22, bonds=21).
+- `3fcq`: SDF sanitization failed due to valency error. Loaded `3fcq_ligand.mol2` (atoms=23, bonds=23).
+- `3fv1`: SDF sanitization failed due to valency error. Loaded `3fv1_ligand.mol2` (atoms=41, bonds=42).
+- `3fv2`: SDF sanitization failed due to valency error. Loaded `3fv2_ligand.mol2` (atoms=36, bonds=37).
+- `3g31`: SDF sanitization failed due to valency error. Loaded `3g31_ligand.mol2` (atoms=31, bonds=33).
+- `3gbb`: SDF sanitization failed due to valency error. Loaded `3gbb_ligand.mol2` (atoms=34, bonds=35).
+- `3gc5`: SDF sanitization failed due to valency error. Loaded `3gc5_ligand.mol2` (atoms=36, bonds=38).
+- `3ge7`: SDF sanitization failed due to valency error. Loaded `3ge7_ligand.mol2` (atoms=53, bonds=56).
+- `3gv9`: SDF sanitization failed due to valency error. Loaded `3gv9_ligand.mol2` (atoms=18, bonds=18).
+- `3gy4`: SDF sanitization failed due to valency error. Loaded `3gy4_ligand.mol2` (atoms=20, bonds=20).
+- `3ivg`: SDF sanitization failed due to valency error. Loaded `3ivg_ligand.mol2` (atoms=46, bonds=49).
+- `3kgp`: SDF sanitization failed due to valency error. Loaded `3kgp_ligand.mol2` (atoms=20, bonds=20).
+- `3n76`: SDF sanitization failed due to valency error. Loaded `3n76_ligand.mol2` (atoms=39, bonds=40).
+- `3n7a`: SDF sanitization failed due to valency error. Loaded `3n7a_ligand.mol2` (atoms=21, bonds=21).
+- `3n86`: SDF sanitization failed due to valency error. Loaded `3n86_ligand.mol2` (atoms=41, bonds=42).
+- `3nq9`: SDF sanitization failed due to valency error. Loaded `3nq9_ligand.mol2` (atoms=25, bonds=24).
+- `3pxf`: SDF sanitization failed due to valency error. Loaded `3pxf_ligand.mol2` (atoms=33, bonds=35).
+- `3qqs`: SDF sanitization failed due to valency error. Loaded `3qqs_ligand.mol2` (atoms=28, bonds=29).
+- `3r88`: SDF sanitization failed due to valency error. Loaded `3r88_ligand.mol2` (atoms=24, bonds=24).
+- `3tsk`: SDF sanitization failed due to valency error. Loaded `3tsk_ligand.mol2` (atoms=71, bonds=73).
+- `3twp`: SDF sanitization failed due to valency error. Loaded `3twp_ligand.mol2` (atoms=15, bonds=15).
+- `3u9q`: SDF sanitization failed due to valency error. Loaded `3u9q_ligand.mol2` (atoms=31, bonds=30).
+- `3ueu`: SDF sanitization failed due to valency error. Loaded `3ueu_ligand.mol2` (atoms=37, bonds=36).
+- `3uev`: SDF sanitization failed due to valency error. Loaded `3uev_ligand.mol2` (atoms=43, bonds=42).
+- `3uew`: SDF sanitization failed due to valency error. Loaded `3uew_ligand.mol2` (atoms=49, bonds=48).
+- `3uex`: SDF sanitization failed due to valency error. Loaded `3uex_ligand.mol2` (atoms=55, bonds=54).
+- `3uo4`: SDF sanitization failed due to valency error. Loaded `3uo4_ligand.mol2` (atoms=46, bonds=49).
+- `3up2`: SDF sanitization failed due to valency error. Loaded `3up2_ligand.mol2` (atoms=40, bonds=42).
+- `3uri`: SDF sanitization failed due to valency error. Loaded `3uri_ligand.mol2` (atoms=130, bonds=133).
+- `3utu`: SDF sanitization failed due to valency error. Loaded `3utu_ligand.mol2` (atoms=82, bonds=85).
+- `3wtj`: SDF sanitization failed due to valency error. Loaded `3wtj_ligand.mol2` (atoms=25, bonds=26).
+- `3zso`: SDF sanitization failed due to valency error. Loaded `3zso_ligand.mol2` (atoms=78, bonds=82).
+- `3zsx`: SDF sanitization failed due to valency error. Loaded `3zsx_ligand.mol2` (atoms=60, bonds=63).
+- `3zt2`: SDF sanitization failed due to valency error. Loaded `3zt2_ligand.mol2` (atoms=34, bonds=37).
+- `4cig`: SDF sanitization failed due to valency error. Loaded `4cig_ligand.mol2` (atoms=67, bonds=70).
+- `4ciw`: SDF sanitization failed due to valency error. Loaded `4ciw_ligand.mol2` (atoms=28, bonds=28).
+- `4ddh`: SDF sanitization failed due to valency error. Loaded `4ddh_ligand.mol2` (atoms=24, bonds=25).
+- `4ddk`: SDF sanitization failed due to valency error. Loaded `4ddk_ligand.mol2` (atoms=17, bonds=18).
+- `4djv`: SDF sanitization failed due to valency error. Loaded `4djv_ligand.mol2` (atoms=50, bonds=53).
+- `4dld`: SDF sanitization failed due to valency error. Loaded `4dld_ligand.mol2` (atoms=33, bonds=33).
+- `4eo8`: SDF sanitization failed due to valency error. Loaded `4eo8_ligand.mol2` (atoms=57, bonds=58).
+- `4gkm`: SDF sanitization failed due to valency error. Loaded `4gkm_ligand.mol2` (atoms=31, bonds=32).
+- `4gr0`: SDF sanitization failed due to valency error. Loaded `4gr0_ligand.mol2` (atoms=74, bonds=77).
+- `4jxs`: SDF sanitization failed due to valency error. Loaded `4jxs_ligand.mol2` (atoms=31, bonds=32).
+- `4kz6`: SDF sanitization failed due to valency error. Loaded `4kz6_ligand.mol2` (atoms=31, bonds=31).
+- `4mme`: SDF sanitization failed due to valency error. Loaded `4mme_ligand.mol2` (atoms=34, bonds=37).
+- `4owm`: SDF sanitization failed due to valency error. Loaded `4owm_ligand.mol2` (atoms=16, bonds=16).
+- `4tmn`: SDF sanitization failed due to valency error. Loaded `4tmn_ligand.mol2` (atoms=68, bonds=69).
+- `5tmn`: SDF sanitization failed due to valency error. Loaded `5tmn_ligand.mol2` (atoms=64, bonds=64).

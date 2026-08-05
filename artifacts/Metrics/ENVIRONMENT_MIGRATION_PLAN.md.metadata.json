@@ -1,0 +1,5 @@
+{
+  "summary":  "Environment migration plan documenting current and target states, step-by-step installation instructions, rollback strategy, and risk assessment.",
+  "updatedAt":  "2026-07-11T15:43:55.493799200Z",
+  "userFacing":  true
+}

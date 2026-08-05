@@ -1,53 +1,57 @@
-# Python caches and compiled files
+# Python runtime artifacts
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+*.so
 
-# Virtual environments
-venv/
+# Virtual environments and local dependency drops
 .venv/
+venv/
 env/
+ENV/
+python_deps/
 
-# Local datasets and large experiment artifacts
+# Local configuration and secrets
+.env
+.env.*
+*.local
+
+# Datasets and external scientific assets
 data/
-outputs/
-!outputs/
-outputs/*
+*.pdb
+*.pdbqt
+*.sdf
+*.mol2
 
-# Keep selected shareable outputs for mentor review
-!outputs/comparison*.txt
-!outputs/report_assets/
-!outputs/report_assets/*.csv
-!outputs/report_assets/*.txt
-!outputs/report_assets/*.png
-!outputs/paper_figures/
-!outputs/paper_figures/*.png
-!outputs/vina_validation/
-!outputs/vina_validation/*.json
-!outputs/vina_validation/*.txt
+# Model checkpoints and generated tensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
 
-# Explicitly keep logs ignored
-outputs/logs/
+# Generated output csv/png files
+outputs/*.csv
+outputs/*.png
+outputs/*.json
+outputs/*.txt
 
-# Jupyter / notebook checkpoints
+# Build, logs and temporary files
+*.tmp
+*.bak
 .ipynb_checkpoints/
-
-# Test and coverage artifacts
 .pytest_cache/
 .coverage
+coverage.xml
 htmlcov/
-
-# Build / packaging artifacts
 build/
 dist/
 *.egg-info/
 
-# IDE / editor files
+# IDE/editor files & OS noise
 .vscode/
 .idea/
 *.code-workspace
-
-# OS noise
 .DS_Store
 Thumbs.db
+desktop.ini

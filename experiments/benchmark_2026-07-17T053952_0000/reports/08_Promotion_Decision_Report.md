@@ -1,0 +1,12 @@
+# Promotion Decision Report
+**Model Type**: `FOUNDATION_HYBRID`  
+**Date**: 2026-07-17  
+
+This report records the official baseline promotion audit.
+
+- **RMSE Gating**: FAIL
+- **Significance Gating**: FAIL
+
+---
+
+**OFFICIAL PROMOTION STATUS**: **REJECTED**

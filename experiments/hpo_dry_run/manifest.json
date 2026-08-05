@@ -1,0 +1,89 @@
+{
+  "checkpoint": "experiments\\hpo_dry_run\\checkpoint.pt",
+  "config": "experiments\\hpo_dry_run\\config.json",
+  "created_utc": "2026-07-12T07:20:46+00:00",
+  "environment": "experiments\\hpo_dry_run\\environment.json",
+  "experiment_dir": "experiments\\hpo_dry_run",
+  "extra_artifacts": {
+    "artifact_validation": "experiments\\hpo_dry_run\\artifact_validation.json",
+    "cli_args": "experiments\\hpo_dry_run\\cli_args.json",
+    "config_fingerprint": "experiments\\hpo_dry_run\\config_fingerprint.json",
+    "config_hash": "experiments\\hpo_dry_run\\config_hash.txt",
+    "dataset_hash": "experiments\\hpo_dry_run\\dataset_hash.json",
+    "dataset_metadata": "experiments\\hpo_dry_run\\dataset_metadata.json",
+    "environment_locks": {
+      "environment_lock": "experiments\\hpo_dry_run\\environment.lock",
+      "pip_freeze": "experiments\\hpo_dry_run\\pip_freeze.txt",
+      "requirements_lock": "experiments\\hpo_dry_run\\requirements.lock"
+    },
+    "error_analysis_csv": "experiments\\hpo_dry_run\\error_analysis.csv",
+    "error_analysis_report": "experiments\\hpo_dry_run\\error_analysis.md",
+    "error_summary": {
+      "average_prediction": 8.75287742614746,
+      "best_prediction_pdb_ids": [
+        "2lp8",
+        "2x2r",
+        "2l75",
+        "2xhs",
+        "2liq",
+        "2lgf",
+        "2lsr",
+        "2lct",
+        "2ltw",
+        "2ndo"
+      ],
+      "bias": 3.1568557262420653,
+      "outlier_count": 0,
+      "outlier_threshold": 5.628261823105964,
+      "sample_count": 10,
+      "top_error_pdb_ids": [
+        "2ndo",
+        "2ltw",
+        "2lct",
+        "2lsr",
+        "2lgf",
+        "2liq",
+        "2xhs",
+        "2l75",
+        "2x2r",
+        "2lp8"
+      ]
+    },
+    "evaluation_report": "experiments\\hpo_dry_run\\evaluation_report.md",
+    "experiment_lifecycle": "experiments\\hpo_dry_run\\experiment_lifecycle.md",
+    "experiment_metadata": "experiments\\hpo_dry_run\\metadata.json",
+    "git": "experiments\\hpo_dry_run\\git.json",
+    "legacy_outputs": {
+      "checkpoint": "outputs\\best_protliggnn.pt",
+      "history": "outputs\\epoch_history_protliggnn_run.csv",
+      "predictions": "outputs\\test_predictions_protliggnn_run.csv",
+      "scatter": "outputs\\scatter_protliggnn_run.png",
+      "training_curves": "outputs\\training_curves_protliggnn_run.png"
+    },
+    "plot_artifacts": {
+      "calibration_curve": "experiments\\hpo_dry_run\\plots\\calibration_curve.png",
+      "calibration_curve_csv": "experiments\\hpo_dry_run\\plots\\calibration_curve.csv",
+      "error_histogram": "experiments\\hpo_dry_run\\plots\\error_histogram.png",
+      "prediction_histogram": "experiments\\hpo_dry_run\\plots\\prediction_histogram.png",
+      "prediction_scatter": "experiments\\hpo_dry_run\\plots\\prediction_scatter.png",
+      "residual_distribution": "experiments\\hpo_dry_run\\plots\\residual_distribution.png",
+      "residual_scatter": "experiments\\hpo_dry_run\\plots\\residual_scatter.png"
+    },
+    "reproducibility_report": "experiments\\hpo_dry_run\\reproducibility_report.md",
+    "reproducibility_report_json": "experiments\\hpo_dry_run\\reproducibility_report.json",
+    "reproducibility_score": 100,
+    "split_validation": "experiments\\hpo_dry_run\\split_validation.json"
+  },
+  "logs": "experiments\\hpo_dry_run\\experiment.log",
+  "metrics": "experiments\\hpo_dry_run\\metrics.json",
+  "plots": "experiments\\hpo_dry_run\\plots",
+  "predictions": "experiments\\hpo_dry_run\\predictions.csv",
+  "split": {
+    "directory": "experiments\\hpo_dry_run\\split",
+    "metadata": "experiments\\hpo_dry_run\\split\\metadata.json",
+    "test_ids": "experiments\\hpo_dry_run\\split\\test_ids.txt",
+    "train_ids": "experiments\\hpo_dry_run\\split\\train_ids.txt",
+    "val_ids": "experiments\\hpo_dry_run\\split\\val_ids.txt"
+  },
+  "training_history": "experiments\\hpo_dry_run\\training_history.csv"
+}

@@ -1,0 +1,25 @@
+{
+  "baseline_mean_rmse": 1.5021799999999998,
+  "candidate_mean_rmse": 1.5686200000000001,
+  "mean_improvement_pct": -8.57665160870788,
+  "paired_t_p_value": 0.54434883521697,
+  "cohens_d": 0.29591245843571373,
+  "shapiro_p": 0.16120893514149626,
+  "bootstrap_ci": [
+    -0.12868000000000007,
+    0.2160800000000001
+  ],
+  "seeds_improved": 1,
+  "promotion_status": "Rejected",
+  "gates": {
+    "RMSE_improvement": false,
+    "statistical_significance": false,
+    "effect_size": false,
+    "equivariance": true,
+    "coordinate_stability": true,
+    "seed_consistency": false,
+    "computational_justified": false,
+    "reports_complete": true
+  },
+  "scientific_score": 3.5
+}

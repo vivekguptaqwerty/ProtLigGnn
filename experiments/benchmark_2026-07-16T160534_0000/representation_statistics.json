@@ -1,0 +1,12 @@
+{
+    "embedding_variance": 0.0483,
+    "embedding_norm": 12.43,
+    "embedding_covariance": 0.0124,
+    "branch_contribution": {
+        "gnn_encoder": 0.483,
+        "chemistry": 0.3727,
+        "rbf_geometry": 0.1443
+    },
+    "head_diversity": 0.7629,
+    "distance_calibration_error": 0.1142
+}

@@ -1,0 +1,117 @@
+{
+  "created_utc": "2026-07-16T22:28:06+00:00",
+  "dataset_root": "data\\pdbbind2020",
+  "file_count": 12,
+  "files": [
+    {
+      "absolute_path": "D:\\ProtLigGnn\\data\\pdbbind2020\\index\\INDEX_general_NL.2020R1.lst",
+      "category": "label_file",
+      "modified_time_utc": "2026-07-11T07:10:37Z",
+      "path": "index\\INDEX_general_NL.2020R1.lst",
+      "sha256": "3e84feb77ad1d7323dde41c8c72bfe1ec2fca11c3d200c4749c6b1715a19071c",
+      "size_bytes": 13412,
+      "stable_sha256": "3e84feb77ad1d7323dde41c8c72bfe1ec2fca11c3d200c4749c6b1715a19071c"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\data\\pdbbind2020\\index\\INDEX_general_PL.2020R1.lst",
+      "category": "label_file",
+      "modified_time_utc": "2026-07-11T07:10:37Z",
+      "path": "index\\INDEX_general_PL.2020R1.lst",
+      "sha256": "35bacd30ce3731704f7adf60dff62df554ec9418f3f12d4411eb8baed3194b3d",
+      "size_bytes": 1523738,
+      "stable_sha256": "35bacd30ce3731704f7adf60dff62df554ec9418f3f12d4411eb8baed3194b3d"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\data\\pdbbind2020\\index\\INDEX_general_PN.2020R1.lst",
+      "category": "label_file",
+      "modified_time_utc": "2026-07-11T07:10:37Z",
+      "path": "index\\INDEX_general_PN.2020R1.lst",
+      "sha256": "42bd364b2da062a46184a86f3844ba29218c037393e9d5f50915b308be279c71",
+      "size_bytes": 88351,
+      "stable_sha256": "42bd364b2da062a46184a86f3844ba29218c037393e9d5f50915b308be279c71"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\data\\pdbbind2020\\index\\INDEX_general_PP.2020R1.lst",
+      "category": "label_file",
+      "modified_time_utc": "2026-07-11T07:10:37Z",
+      "path": "index\\INDEX_general_PP.2020R1.lst",
+      "sha256": "5a42fb9c2f8c637e9fb35ad7cf145be5bc87ee98e74c277208faa95d788ecfe5",
+      "size_bytes": 238006,
+      "stable_sha256": "5a42fb9c2f8c637e9fb35ad7cf145be5bc87ee98e74c277208faa95d788ecfe5"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\data\\pdbbind2020\\index\\README",
+      "category": "dataset_index_metadata",
+      "modified_time_utc": "2026-07-11T07:10:37Z",
+      "path": "index\\README",
+      "sha256": "17b26c6a71998e75fdea6ae652a84e797b2e6de1d4ee70a6d369a2b94c12ced0",
+      "size_bytes": 1273,
+      "stable_sha256": "17b26c6a71998e75fdea6ae652a84e797b2e6de1d4ee70a6d369a2b94c12ced0"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\experiments\\run_016\\split\\train_ids.txt",
+      "category": "split_manifest",
+      "modified_time_utc": "2026-07-16T22:28:06Z",
+      "path": "split\\train_ids.txt",
+      "sha256": "5533bf309470f155f7534ea80d5193703cb1a3fef414d9d34999bebf7e4f510b",
+      "size_bytes": 4800,
+      "stable_sha256": "5533bf309470f155f7534ea80d5193703cb1a3fef414d9d34999bebf7e4f510b"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\experiments\\run_016\\split\\val_ids.txt",
+      "category": "split_manifest",
+      "modified_time_utc": "2026-07-16T22:28:06Z",
+      "path": "split\\val_ids.txt",
+      "sha256": "9d409c01ea2b31dbcf95e3361eafbdfc30bc706469b17648818da4ba3a84f23a",
+      "size_bytes": 600,
+      "stable_sha256": "9d409c01ea2b31dbcf95e3361eafbdfc30bc706469b17648818da4ba3a84f23a"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\experiments\\run_016\\split\\test_ids.txt",
+      "category": "split_manifest",
+      "modified_time_utc": "2026-07-16T22:28:06Z",
+      "path": "split\\test_ids.txt",
+      "sha256": "e4c1c914905470a6bf7464429c103f231775c32c2182bbcbd62e60ae41910844",
+      "size_bytes": 600,
+      "stable_sha256": "e4c1c914905470a6bf7464429c103f231775c32c2182bbcbd62e60ae41910844"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\experiments\\run_016\\split\\metadata.json",
+      "category": "split_manifest",
+      "modified_time_utc": "2026-07-16T22:28:06Z",
+      "path": "split\\metadata.json",
+      "sha256": "1fc3b85f0731ba41dd073c13d870450afef6fda0bf5b220168023f644cb0c9f2",
+      "size_bytes": 15639,
+      "stable_sha256": "7f4ceceae3dd59caf701349a3fee831d86aee87fdedd5257e70699e6b56163f2"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\experiments\\run_016\\dataset_metadata.json",
+      "category": "experiment_metadata",
+      "modified_time_utc": "2026-07-16T22:28:06Z",
+      "path": "dataset_metadata.json",
+      "sha256": "f19963a69054e6ae0ca16566b3c638d8b4308ee70789148a1916c777f4e2c2cc",
+      "size_bytes": 13300,
+      "stable_sha256": "a07fcc0145e924405295ee5c197978f3b5f4f12a4d2fcfcb27c94e2a182d9d6d"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\experiments\\run_016\\metadata.json",
+      "category": "experiment_metadata",
+      "modified_time_utc": "2026-07-16T22:27:48Z",
+      "path": "metadata.json",
+      "sha256": "4a534601a55a6137bda7be7abc252b13ccfb2d0a07e7e7eee1ddf29a8afde19c",
+      "size_bytes": 461,
+      "stable_sha256": "2b3461df3c000f2cf8163552dfb5b13f09d8e7ee5b8c944d20fbdce31394c309"
+    },
+    {
+      "absolute_path": "D:\\ProtLigGnn\\experiments\\run_016\\split_validation.json",
+      "category": "experiment_metadata",
+      "modified_time_utc": "2026-07-16T22:28:06Z",
+      "path": "split_validation.json",
+      "sha256": "d07f0412fdfa990a606c4fa00f87cf08e48158cc6e73daca14f297ed903979c5",
+      "size_bytes": 350,
+      "stable_sha256": "a966a5f25c9775c13c475a0b5d44909bf1589407984e728bbbe52a800de0b12d"
+    }
+  ],
+  "overall_sha256": "2942f95d4cdc0f1c0a59ffc0543ecdf6ffef66c8fb05f12da6b855c2de4359ce",
+  "split_dir": "experiments\\run_016\\split"
+}

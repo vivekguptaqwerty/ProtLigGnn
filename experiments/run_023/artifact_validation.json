@@ -1,0 +1,115 @@
+{
+  "created_utc": "2026-07-17T04:35:35+00:00",
+  "directories": {
+    "plots": {
+      "exists": true,
+      "file_count": 7,
+      "path": "experiments\\run_023\\plots",
+      "valid": true
+    }
+  },
+  "files": {
+    "checkpoint": {
+      "exists": true,
+      "path": "experiments\\run_023\\checkpoint.pt",
+      "size_bytes": 19281254
+    },
+    "config": {
+      "exists": true,
+      "path": "experiments\\run_023\\config.json",
+      "size_bytes": 2272
+    },
+    "config_hash": {
+      "exists": true,
+      "path": "experiments\\run_023\\config_hash.txt",
+      "size_bytes": 66
+    },
+    "dataset_hash": {
+      "exists": true,
+      "path": "experiments\\run_023\\dataset_hash.json",
+      "size_bytes": 5519
+    },
+    "environment": {
+      "exists": true,
+      "path": "experiments\\run_023\\environment.json",
+      "size_bytes": 1203
+    },
+    "environment_lock": {
+      "exists": true,
+      "path": "experiments\\run_023\\environment.lock",
+      "size_bytes": 1203
+    },
+    "lifecycle": {
+      "exists": true,
+      "path": "experiments\\run_023\\experiment_lifecycle.md",
+      "size_bytes": 342
+    },
+    "logs": {
+      "exists": true,
+      "path": "experiments\\run_023\\experiment.log",
+      "size_bytes": 47119
+    },
+    "manifest": {
+      "exists": true,
+      "path": "experiments\\run_023\\manifest.json",
+      "size_bytes": 3295
+    },
+    "metadata": {
+      "exists": true,
+      "path": "experiments\\run_023\\metadata.json",
+      "size_bytes": 461
+    },
+    "metrics": {
+      "exists": true,
+      "path": "experiments\\run_023\\metrics.json",
+      "size_bytes": 643
+    },
+    "pip_freeze": {
+      "exists": true,
+      "path": "experiments\\run_023\\pip_freeze.txt",
+      "size_bytes": 1331
+    },
+    "predictions": {
+      "exists": true,
+      "path": "experiments\\run_023\\predictions.csv",
+      "size_bytes": 181
+    },
+    "requirements_lock": {
+      "exists": true,
+      "path": "experiments\\run_023\\requirements.lock",
+      "size_bytes": 1379
+    },
+    "split_manifest": {
+      "exists": true,
+      "path": "experiments\\run_023\\split\\metadata.json",
+      "size_bytes": 780
+    },
+    "split_test_ids": {
+      "exists": true,
+      "path": "experiments\\run_023\\split\\test_ids.txt",
+      "size_bytes": 6
+    },
+    "split_train_ids": {
+      "exists": true,
+      "path": "experiments\\run_023\\split\\train_ids.txt",
+      "size_bytes": 48
+    },
+    "split_val_ids": {
+      "exists": true,
+      "path": "experiments\\run_023\\split\\val_ids.txt",
+      "size_bytes": 6
+    },
+    "split_validation": {
+      "exists": true,
+      "path": "experiments\\run_023\\split_validation.json",
+      "size_bytes": 344
+    },
+    "training_history": {
+      "exists": true,
+      "path": "experiments\\run_023\\training_history.csv",
+      "size_bytes": 928
+    }
+  },
+  "missing_or_invalid": [],
+  "valid": true
+}

@@ -228,14 +228,22 @@ def select_ligand_file(complex_dir: Path, pdb_id: str) -> Optional[Path]:
     return None
 
 
-def discover_complex_records(data_dir: Path, max_samples: Optional[int]) -> List[ComplexRecord]:
+def discover_complex_records(
+    data_dir: Path,
+    max_samples: Optional[int] = None,
+    exclude_ids: Optional[set[str]] = None,
+) -> List[ComplexRecord]:
     affinities = load_affinity_index(data_dir / "index")
     complex_dirs = find_complex_directories(data_dir)
+    exclude_ids = exclude_ids or set()
 
     records: List[ComplexRecord] = []
     for pdb_id in sorted(complex_dirs):
+        if pdb_id in exclude_ids:
+            continue
         if pdb_id not in affinities:
             continue
+
         complex_dir = complex_dirs[pdb_id]
         protein_path = complex_dir / f"{pdb_id}_protein.pdb"
         ligand_path = select_ligand_file(complex_dir, pdb_id)
@@ -259,15 +267,31 @@ def load_ligand_molecule(ligand_path: Path) -> Optional[Chem.Mol]:
     mol: Optional[Chem.Mol] = None
     if suffix == ".sdf":
         supplier = Chem.SDMolSupplier(str(ligand_path), removeHs=False, sanitize=True)
-        if len(supplier) > 0:
+        if len(supplier) > 0 and supplier[0] is not None:
             mol = supplier[0]
+        else:
+            supplier = Chem.SDMolSupplier(str(ligand_path), removeHs=False, sanitize=False)
+            if len(supplier) > 0 and supplier[0] is not None:
+                mol = supplier[0]
+                try:
+                    mol.UpdatePropertyCache(strict=False)
+                except Exception:
+                    pass
     elif suffix == ".mol2":
         mol = Chem.MolFromMol2File(str(ligand_path), removeHs=False, sanitize=True)
+        if mol is None:
+            mol = Chem.MolFromMol2File(str(ligand_path), removeHs=False, sanitize=False)
+            if mol is not None:
+                try:
+                    mol.UpdatePropertyCache(strict=False)
+                except Exception:
+                    pass
     if mol is None:
         return None
     if mol.GetNumConformers() == 0:
         return None
     return mol
+
 
 
 def atom_is_donor(atom: rdchem.Atom) -> float:
@@ -539,14 +563,14 @@ def collate_pairs(batch):
 
 
 class LigandEncoder(nn.Module):
-    def __init__(self, input_dim: int, hidden_dim: int = 256):
+    def __init__(self, input_dim: int, hidden_dim: int = 256, dropout: float = 0.1, use_layernorm: bool = True, **kwargs):
         super().__init__()
-        self.conv1 = GATConv(input_dim, hidden_dim // 4, heads=4, dropout=0.1)
-        self.conv2 = GATConv(hidden_dim, hidden_dim // 4, heads=4, dropout=0.1)
-        self.conv3 = GATConv(hidden_dim, hidden_dim, heads=1, concat=False, dropout=0.1)
-        self.norm1 = nn.LayerNorm(hidden_dim)
-        self.norm2 = nn.LayerNorm(hidden_dim)
-        self.norm3 = nn.LayerNorm(hidden_dim)
+        self.conv1 = GATConv(input_dim, hidden_dim // 4, heads=4, dropout=dropout)
+        self.conv2 = GATConv(hidden_dim, hidden_dim // 4, heads=4, dropout=dropout)
+        self.conv3 = GATConv(hidden_dim, hidden_dim, heads=1, concat=False, dropout=dropout)
+        self.norm1 = nn.LayerNorm(hidden_dim) if use_layernorm else nn.Identity()
+        self.norm2 = nn.LayerNorm(hidden_dim) if use_layernorm else nn.Identity()
+        self.norm3 = nn.LayerNorm(hidden_dim) if use_layernorm else nn.Identity()
 
     def forward(self, x, edge_index):
         x = self.norm1(F.elu(self.conv1(x, edge_index)))
@@ -556,14 +580,15 @@ class LigandEncoder(nn.Module):
 
 
 class ProteinEncoder(nn.Module):
-    def __init__(self, input_dim: int, hidden_dim: int = 256):
+    def __init__(self, input_dim: int, hidden_dim: int = 256, use_layernorm: bool = True, **kwargs):
         super().__init__()
         self.conv1 = GCNConv(input_dim, hidden_dim)
         self.conv2 = GCNConv(hidden_dim, hidden_dim)
         self.conv3 = GCNConv(hidden_dim, hidden_dim)
-        self.norm1 = nn.LayerNorm(hidden_dim)
-        self.norm2 = nn.LayerNorm(hidden_dim)
-        self.norm3 = nn.LayerNorm(hidden_dim)
+        self.norm1 = nn.LayerNorm(hidden_dim) if use_layernorm else nn.Identity()
+        self.norm2 = nn.LayerNorm(hidden_dim) if use_layernorm else nn.Identity()
+        self.norm3 = nn.LayerNorm(hidden_dim) if use_layernorm else nn.Identity()
+
 
     def forward(self, x, edge_index):
         x = self.norm1(F.relu(self.conv1(x, edge_index)))
@@ -864,7 +889,7 @@ def save_training_curves(history: List[Dict[str, float]], output_path: Path, run
     plt.close(fig)
 
 
-def parse_args():
+def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Train ProtLigGNN on PDBbind v2020.")
     parser.add_argument("--data_dir", type=str, default="data/pdbbind2020")
     parser.add_argument("--device", type=str, default="cpu")
@@ -876,9 +901,184 @@ def parse_args():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--max_samples", type=int, default=None)
     parser.add_argument("--run_name", type=str, default="protliggnn_run")
+    parser.add_argument(
+        "--model_type",
+        choices=["protliggnn", "geometry_attention", "physics_guided", "soft_routing"],
+        default="protliggnn",
+    )
+    parser.add_argument("--hidden_dim", type=int, default=256)
+    parser.add_argument("--dropout", type=float, default=0.2)
+    parser.add_argument("--pooling", choices=["mean", "max", "mean_max"], default="mean")
     parser.add_argument("--no_crossgraph", action="store_true")
+    parser.add_argument("--no_attention", action="store_true")
+    parser.add_argument("--no_layernorm", action="store_true")
+    parser.add_argument("--no_residual", action="store_true")
+    parser.add_argument("--optimizer", choices=["adam", "adamw"], default="adam")
+    parser.add_argument("--scheduler", choices=["none", "cosine", "plateau"], default="none")
+    parser.add_argument("--min_lr", type=float, default=1e-6)
+    parser.add_argument("--scheduler_patience", type=int, default=4)
+    parser.add_argument("--grad_clip", type=float, default=None)
+    parser.add_argument("--target_normalization", action="store_true")
+    parser.add_argument("--contact_loss_weight", type=float, default=0.0)
+    parser.add_argument("--contact_threshold", type=float, default=4.0)
+    parser.add_argument("--contact_hidden_dim", type=int, default=256)
+    parser.add_argument("--attention_bias_type", choices=["rbf", "learned"], default="rbf")
+    parser.add_argument("--rbf_basis", type=int, default=32)
+    parser.add_argument("--rbf_stop", type=float, default=12.0)
+    parser.add_argument("--attention_heads", type=int, default=4)
+    parser.add_argument("--attention_initial_alpha", type=float, default=0.1)
+    parser.add_argument("--attention_learnable_scale", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument("--attention_normalize_bias", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument("--router_type", choices=["linear", "residual", "gated"], default="gated")
+    parser.add_argument("--routing_level", choices=["embedding", "attention_head"], default="embedding")
+    parser.add_argument("--router_layers", type=int, default=2)
+    parser.add_argument("--router_activation", choices=["relu", "gelu"], default="relu")
+    parser.add_argument("--router_normalization", choices=["layer", "none"], default="layer")
+    parser.add_argument("--router_capacity", choices=["tiny", "small", "base"], default="base")
+    parser.add_argument("--gate_regularization", type=float, default=0.0)
+    parser.add_argument("--entropy_regularization", type=float, default=0.01)
+    parser.add_argument("--sparsity_regularization", type=float, default=0.0)
+    parser.add_argument("--diversity_regularization", type=float, default=0.0)
+    parser.add_argument("--exclude_casf_coreset", action="store_true")
+    parser.add_argument("--casf_coreset_path", type=str, default="data/CASF-2016/power_scoring/CoreSet.dat")
     parser.add_argument("--save_path", type=str, default="outputs/best_protliggnn.pt")
-    return parser.parse_args()
+    return parser.parse_args(argv)
+
+
+
+
+def load_excluded_ids(coreset_path: Path) -> set[str]:
+    excluded = set()
+    if not coreset_path.exists():
+        return excluded
+    with coreset_path.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#"):
+                parts = line.split()
+                if parts:
+                    excluded.add(parts[0].lower())
+    return excluded
+
+
+class TargetStats:
+    def __init__(self, mean: float, std: float):
+        self.mean = float(mean)
+        self.std = float(std) if std > 1e-6 else 1.0
+
+    @classmethod
+    def from_labels(cls, labels: List[float]) -> "TargetStats":
+        arr = np.array(labels, dtype=np.float32)
+        return cls(float(np.mean(arr)), float(np.std(arr)))
+
+    def normalize_tensor(self, tensor: torch.Tensor) -> torch.Tensor:
+        return (tensor - self.mean) / self.std
+
+    def denormalize_tensor(self, tensor: torch.Tensor) -> torch.Tensor:
+        return tensor * self.std + self.mean
+
+    def to_dict(self) -> Dict[str, float]:
+        return {"mean": self.mean, "std": self.std}
+
+
+def build_model(args, device: torch.device) -> nn.Module:
+    common_kwargs = {
+        "ligand_dim": LIGAND_FEATURE_DIM,
+        "protein_dim": PROTEIN_FEATURE_DIM,
+        "hidden_dim": args.hidden_dim,
+        "no_crossgraph": args.no_crossgraph,
+        "dropout": args.dropout,
+        "use_residual": not args.no_residual,
+        "use_layernorm": not args.no_layernorm,
+        "use_attention": not args.no_attention,
+        "pooling": args.pooling,
+    }
+
+    if args.model_type == "protliggnn":
+        return ProtLigGNN(**common_kwargs).to(device)
+
+    if args.model_type == "geometry_attention":
+        from models.geometry_attention import AttentionBiasConfig, ProtLigGNNGeometryAttention
+
+        config = AttentionBiasConfig(
+            bias_type=args.attention_bias_type,
+            num_rbf=args.rbf_basis,
+            cutoff_distance=args.rbf_stop,
+            learnable_scale=args.attention_learnable_scale,
+            initial_alpha=args.attention_initial_alpha,
+            normalize_bias=args.attention_normalize_bias,
+            num_heads=args.attention_heads,
+        )
+        return ProtLigGNNGeometryAttention(**common_kwargs, config=config).to(device)
+
+    if args.model_type == "physics_guided":
+        from models.physics_guided import PhysicsGuidedConfig, ProtLigGNNPhysicsGuided
+
+        config = PhysicsGuidedConfig(
+            contact_threshold=args.contact_threshold,
+            loss_weight=args.contact_loss_weight,
+            loss_weight_strategy="fixed",
+            contact_hidden_dim=args.contact_hidden_dim,
+            dropout=args.dropout * 0.5,
+        )
+        return ProtLigGNNPhysicsGuided(**common_kwargs, config=config).to(device)
+
+    if args.model_type == "soft_routing":
+        from models.soft_routing import ProtLigGNNSoftRouting, RoutingConfig
+
+        config = RoutingConfig(
+            router_type=args.router_type,
+            routing_level=args.routing_level,
+            latent_dimension=args.hidden_dim * 2,
+            routing_dimension=args.hidden_dim,
+            num_layers=args.router_layers,
+            activation=args.router_activation,
+            normalization=args.router_normalization,
+            dropout=args.dropout * 0.5,
+            gate_regularization=args.gate_regularization,
+            entropy_regularization=args.entropy_regularization,
+            sparsity_regularization=args.sparsity_regularization,
+            diversity_regularization=args.diversity_regularization,
+            learnable_temperature=args.attention_learnable_scale,
+            router_capacity=args.router_capacity,
+        )
+        return ProtLigGNNSoftRouting(**common_kwargs, config=config).to(device)
+
+    raise ValueError(f"Unsupported model_type: {args.model_type}")
+
+
+def build_optimizer(args, model: nn.Module):
+    if args.optimizer == "adamw":
+        return torch.optim.AdamW(
+            model.parameters(),
+            lr=args.lr,
+            weight_decay=args.weight_decay,
+        )
+    return torch.optim.Adam(
+        model.parameters(),
+        lr=args.lr,
+        weight_decay=args.weight_decay,
+    )
+
+
+def build_scheduler(args, optimizer):
+    if args.scheduler == "none":
+        return None
+    if args.scheduler == "cosine":
+        return torch.optim.lr_scheduler.CosineAnnealingLR(
+            optimizer,
+            T_max=max(1, args.epochs),
+            eta_min=args.min_lr,
+        )
+    if args.scheduler == "plateau":
+        return torch.optim.lr_scheduler.ReduceLROnPlateau(
+            optimizer,
+            mode="min",
+            factor=0.5,
+            patience=max(1, args.scheduler_patience),
+            min_lr=args.min_lr,
+        )
+    raise ValueError(f"Unsupported scheduler: {args.scheduler}")
 
 
 def main():
@@ -890,7 +1090,15 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Loading dataset from {data_dir.resolve()}")
-    records = discover_complex_records(data_dir, args.max_samples)
+    exclude_ids = set()
+    if args.exclude_casf_coreset:
+        casf_coreset_path = Path(args.casf_coreset_path)
+        if not casf_coreset_path.exists():
+            raise FileNotFoundError(f"Missing CASF coreset file: {casf_coreset_path}")
+        exclude_ids = load_excluded_ids(casf_coreset_path)
+        print(f"Excluding {len(exclude_ids)} CASF coreset IDs from training discovery.")
+
+    records = discover_complex_records(data_dir, args.max_samples, exclude_ids=exclude_ids)
     print(f"Found {len(records)} candidate complexes with labels and matching files before validation.")
     if not records:
         raise RuntimeError("No candidate complexes were found. Check --data_dir and index files.")
@@ -908,12 +1116,23 @@ def main():
     val_loader = make_loader(dataset.samples, val_idx, args.batch_size, shuffle=False)
     test_loader = make_loader(dataset.samples, test_idx, args.batch_size, shuffle=False)
 
-    model = ProtLigGNN(
-        ligand_dim=LIGAND_FEATURE_DIM,
-        protein_dim=PROTEIN_FEATURE_DIM,
-        no_crossgraph=args.no_crossgraph,
-    ).to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+    target_stats = None
+    if args.target_normalization:
+        target_stats = TargetStats.from_labels([dataset.samples[idx][2] for idx in train_idx])
+        print(
+            f"Using target-normalized loss with train mean={target_stats.mean:.4f}, "
+            f"std={target_stats.std:.4f}."
+        )
+
+    model = build_model(args, device)
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(
+        f"Model: {args.model_type} hidden_dim={args.hidden_dim} pooling={args.pooling} "
+        f"trainable_params={trainable_params:,}"
+    )
+    optimizer = build_optimizer(args, model)
+    scheduler = build_scheduler(args, optimizer)
+
 
     best_score = float("inf")
     best_stats = {}

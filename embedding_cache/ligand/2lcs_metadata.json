@@ -1,0 +1,11 @@
+{
+    "cache_schema_version": "1.0",
+    "embedding_model": "chemberta",
+    "embedding_revision": "emulator",
+    "projection_dim": 256,
+    "smiles_hash": "fe3cc9b24fcc470a803c1f193286da860befa546349ad144d8e500e4393cf28e",
+    "canonicalization_method": "rdkit_canonical",
+    "rdkit_version": "2026.03.3",
+    "created_time": "2026-07-17T06:08:30Z",
+    "checksum": 89984.109375
+}

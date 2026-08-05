@@ -1,0 +1,13 @@
+{
+  "architecture_version": "protliggnn-v1",
+  "author": "unknown",
+  "created_utc": "2026-07-12T17:45:18+00:00",
+  "current_milestone": "research-infrastructure",
+  "description": "",
+  "expected_outcome": "",
+  "experiment_purpose": "benchmark",
+  "notes": "",
+  "research_question": "Can ProtLigGNN reproducibly predict protein-ligand affinity under this benchmark configuration?",
+  "research_version": "benchmark-v2",
+  "tags": []
+}

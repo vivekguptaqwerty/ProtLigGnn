@@ -1,0 +1,27 @@
+=== Benchmark Started: 2026-07-17T06:19:45+00:00 ===
+[2026-07-17T06:20:06+00:00] Seed: 42 | Epoch: 1/5 | Train Loss: 13.0113 | Val RMSE: None | ETA: 82s
+[2026-07-17T06:20:06+00:00] Seed: 42 | Epoch: 2/5 | Train Loss: 3.1232 | Val RMSE: 2.1005 | ETA: 0s
+[2026-07-17T06:20:07+00:00] Seed: 42 | Epoch: 3/5 | Train Loss: 2.137 | Val RMSE: 1.3286 | ETA: 0s
+[2026-07-17T06:20:07+00:00] Seed: 42 | Epoch: 4/5 | Train Loss: 2.377 | Val RMSE: 1.3933 | ETA: 0s
+[2026-07-17T06:20:08+00:00] Seed: 42 | Epoch: 5/5 | Train Loss: 2.8135 | Val RMSE: 1.3822 | ETA: 0s
+[2026-07-17T06:20:32+00:00] Seed: 123 | Epoch: 1/5 | Train Loss: 12.8815 | Val RMSE: None | ETA: 85s
+[2026-07-17T06:20:32+00:00] Seed: 123 | Epoch: 2/5 | Train Loss: 2.9663 | Val RMSE: 0.9836 | ETA: 0s
+[2026-07-17T06:20:32+00:00] Seed: 123 | Epoch: 3/5 | Train Loss: 2.3356 | Val RMSE: 0.7683 | ETA: 0s
+[2026-07-17T06:20:33+00:00] Seed: 123 | Epoch: 4/5 | Train Loss: 1.8547 | Val RMSE: 0.6323 | ETA: 0s
+[2026-07-17T06:20:34+00:00] Seed: 123 | Epoch: 5/5 | Train Loss: 2.3505 | Val RMSE: 0.6446 | ETA: 0s
+[2026-07-17T06:20:57+00:00] Seed: 777 | Epoch: 1/5 | Train Loss: 10.6743 | Val RMSE: None | ETA: 86s
+[2026-07-17T06:20:58+00:00] Seed: 777 | Epoch: 2/5 | Train Loss: 3.6805 | Val RMSE: 3.3038 | ETA: 0s
+[2026-07-17T06:20:58+00:00] Seed: 777 | Epoch: 3/5 | Train Loss: 2.9522 | Val RMSE: 1.7076 | ETA: 0s
+[2026-07-17T06:20:59+00:00] Seed: 777 | Epoch: 4/5 | Train Loss: 2.2958 | Val RMSE: 2.9209 | ETA: 0s
+[2026-07-17T06:20:59+00:00] Seed: 777 | Epoch: 5/5 | Train Loss: 1.8682 | Val RMSE: 2.0079 | ETA: 0s
+=== Benchmark Resumed: 2026-07-17T06:21:31+00:00 ===
+[2026-07-17T06:21:54+00:00] Seed: 2024 | Epoch: 1/5 | Train Loss: 11.2241 | Val RMSE: None | ETA: 90s
+[2026-07-17T06:21:54+00:00] Seed: 2024 | Epoch: 2/5 | Train Loss: 2.9052 | Val RMSE: 1.113 | ETA: 0s
+[2026-07-17T06:21:55+00:00] Seed: 2024 | Epoch: 3/5 | Train Loss: 2.855 | Val RMSE: 1.6485 | ETA: 0s
+[2026-07-17T06:21:56+00:00] Seed: 2024 | Epoch: 4/5 | Train Loss: 2.4349 | Val RMSE: 0.9878 | ETA: 0s
+[2026-07-17T06:21:56+00:00] Seed: 2024 | Epoch: 5/5 | Train Loss: 2.9451 | Val RMSE: 1.4235 | ETA: 0s
+[2026-07-17T06:22:20+00:00] Seed: 3407 | Epoch: 1/5 | Train Loss: 12.8146 | Val RMSE: None | ETA: 86s
+[2026-07-17T06:22:20+00:00] Seed: 3407 | Epoch: 2/5 | Train Loss: 3.0606 | Val RMSE: 1.9792 | ETA: 0s
+[2026-07-17T06:22:21+00:00] Seed: 3407 | Epoch: 3/5 | Train Loss: 2.006 | Val RMSE: 1.744 | ETA: 0s
+[2026-07-17T06:22:22+00:00] Seed: 3407 | Epoch: 4/5 | Train Loss: 1.6435 | Val RMSE: 1.7562 | ETA: 0s
+[2026-07-17T06:22:22+00:00] Seed: 3407 | Epoch: 5/5 | Train Loss: 1.6577 | Val RMSE: 1.9019 | ETA: 0s

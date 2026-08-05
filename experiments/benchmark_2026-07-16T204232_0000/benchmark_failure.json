@@ -1,0 +1,6 @@
+{
+  "experiment_dir": "experiments\\run_015",
+  "log": "experiments\\run_015\\benchmark_subprocess.log",
+  "returncode": 1,
+  "seed": 2024
+}

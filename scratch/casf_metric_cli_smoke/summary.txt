@@ -1,0 +1,23 @@
+CASF-2016 benchmark completed
+Output directory: scratch\casf_metric_cli_smoke
+
+Coverage: 285/285 coreset complexes, 57 ranking clusters
+
+Scoring power:
+  Pearson R: 0.371
+  Standard deviation of fit: 2.02
+  Spearman: 0.385
+  Kendall tau: 0.257
+  Direct RMSE: 2.111
+  MAE: 1.705
+  Direct R^2: 0.054
+
+Ranking power:
+  Mean Spearman: 0.174
+  Mean Kendall tau: 0.123
+  Mean Predictive Index: 0.164
+  Top-1 success: 35.09%
+  Top-2 success: 52.63%
+  Top-3 success: 73.68%
+
+Docking/screening power not run: decoy-level model score files were not present.

@@ -1,0 +1,20 @@
+{
+  "baseline": {
+    "params": 362881,
+    "disk_size_mb": 1.4010944366455078,
+    "latency_ms": 17.349583000177518,
+    "peak_vram_mb": 24.13720703125
+  },
+  "geometry_3_1a": {
+    "params": 376609,
+    "disk_size_mb": 1.4566364288330078,
+    "latency_ms": 18.99577199947089,
+    "peak_vram_mb": 26.94189453125
+  },
+  "geometry_attention_3_1b": {
+    "params": 363014,
+    "disk_size_mb": 1.4031085968017578,
+    "latency_ms": 25.91356699995231,
+    "peak_vram_mb": 31.486328125
+  }
+}

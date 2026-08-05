@@ -1,0 +1,5 @@
+{
+  "summary":  "Training optimization report summarizing training dynamics, comparison of optimizer types (Adam, AdamW, RAdam), scheduler types (none, plateau, cosine), and gradient clipping limits.",
+  "updatedAt":  "2026-07-12T08:02:18.505298700Z",
+  "userFacing":  true
+}

@@ -1,0 +1,67 @@
+# A17 Dataset Provenance: CASF-2016
+
+This report documents the exact training/validation dataset split sizes and source formats used by each checkpoint.
+
+| Path | Train Count | Val Count | Test Count | Dataset Version | Split Strategy |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `experiments/run_001/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_002/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_003/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_004/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_005/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_006/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_007/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_008/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_009/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_010/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_011/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_012/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_013/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_014/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_015/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_016/checkpoint.pt` | 800 | 100 | 100 | pdbbind2020_local | random |
+| `experiments/run_017/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_018/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_019/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_020/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_021/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_022/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_023/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_024/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_025/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_026/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_027/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_028/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_029/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_030/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_031/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_032/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_033/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_034/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_035/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_036/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_037/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_038/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_039/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_040/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_041/checkpoint.pt` | 8 | 1 | 1 | pdbbind2020_local | random |
+| `experiments/run_042/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_043/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_044/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_045/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_046/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_047/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_048/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_049/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_050/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_051/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_052/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_053/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_054/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_055/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_056/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_057/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_058/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_059/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `experiments/run_060/checkpoint.pt` | 40 | 5 | 5 | pdbbind2020_local | random |
+| `outputs/best_protliggnn.pt` | 800 | 100 | 100 | pdbbind2020_local | random |

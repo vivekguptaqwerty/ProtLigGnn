@@ -1,0 +1,495 @@
+Command: D:\ProtLigGnn\venv\Scripts\python.exe protliggnn_train.py --data_dir data/pdbbind2020 --device cuda:0 --epochs 50 --batch_size 8 --lr 0.001 --weight_decay 1e-05 --patience 10 --seed 3407 --run_name protliggnn_benchmark_seed_3407 --save_path experiments\run_006\checkpoint.pt --split_strategy random --split_dir splits --val_fraction 0.1 --test_fraction 0.1 --dataset_version pdbbind2020_local --experiments_root experiments --experiment_dir experiments\run_006 --log_level INFO --num_workers 0 --research_version Validated Baseline v0.95 --max_samples 1000 --allow_duplicate --hidden_dim 256 --dropout 0.2 --optimizer adam --scheduler none --pooling mean --model_type soft_routing --rbf_basis 32 --rbf_start 0.0 --rbf_stop 12.0 --rbf_proj_dim 32 --interaction_dim 32 --latent_dim 32 --chemistry_dim 32 --representation_dim 32 --attention_bias_type rbf --attention_learnable_scale true --attention_initial_alpha 0.1 --attention_normalize_bias true --contact_threshold 4.0 --loss_weight 0.1 --loss_weight_strategy fixed --contact_hidden_dim 128 --router_type linear --routing_level embedding --gate_regularization 0.0 --entropy_regularization 0.01 --sparsity_regularization 0.0 --diversity_regularization 0.0 --router_capacity base
+
+2026-07-17 00:19:39,973 INFO protliggnn - Experiment directory: experiments\run_006
+2026-07-17 00:19:39,973 INFO protliggnn - CLI arguments: {'data_dir': 'data/pdbbind2020', 'device': 'cuda:0', 'epochs': 50, 'batch_size': 8, 'lr': 0.001, 'weight_decay': 1e-05, 'patience': 10, 'seed': 3407, 'max_samples': 1000, 'run_name': 'protliggnn_benchmark_seed_3407', 'no_crossgraph': False, 'save_path': 'experiments\\run_006\\checkpoint.pt', 'split_strategy': 'random', 'split_dir': 'splits', 'fixed_split_dir': None, 'val_fraction': 0.1, 'test_fraction': 0.1, 'dataset_version': 'pdbbind2020_local', 'experiments_root': 'experiments', 'experiment_dir': 'experiments\\run_006', 'experiment_id': None, 'num_workers': 0, 'pin_memory': False, 'disable_experiment_tracking': False, 'resume': None, 'allow_duplicate': True, 'hidden_dim': 256, 'dropout': 0.2, 'optimizer': 'adam', 'scheduler': 'none', 'grad_clip': None, 'no_residual': False, 'no_layernorm': False, 'no_attention': False, 'pooling': 'mean', 'log_level': 'INFO', 'model_type': 'soft_routing', 'router_type': 'linear', 'routing_level': 'embedding', 'gate_regularization': 0.0, 'entropy_regularization': 0.01, 'sparsity_regularization': 0.0, 'diversity_regularization': 0.0, 'router_capacity': 'base', 'contact_threshold': 4.0, 'loss_weight': 0.1, 'loss_weight_strategy': 'fixed', 'contact_hidden_dim': 128, 'rbf_basis': 32, 'rbf_start': 0.0, 'rbf_stop': 12.0, 'rbf_proj_dim': 32, 'interaction_dim': 32, 'latent_dim': 32, 'chemistry_dim': 32, 'representation_dim': 32, 'attention_bias_type': 'rbf', 'attention_learnable_scale': 'true', 'attention_initial_alpha': 0.1, 'attention_normalize_bias': 'true', 'experiment_purpose': 'benchmark', 'research_question': 'Can ProtLigGNN reproducibly predict protein-ligand affinity under this benchmark configuration?', 'author': 'unknown', 'description': '', 'notes': '', 'tags': '', 'expected_outcome': '', 'current_milestone': 'research-infrastructure', 'architecture_version': 'protliggnn-v1', 'research_version': 'Validated Baseline v0.95'}
+2026-07-17 00:19:39,974 INFO protliggnn - Loading dataset from D:\ProtLigGnn\data\pdbbind2020
+2026-07-17 00:19:39,975 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:39,976 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<=17nM' (relation: '<='). Treating as exact value.
+2026-07-17 00:19:39,976 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<=3.5nM' (relation: '<='). Treating as exact value.
+2026-07-17 00:19:39,976 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1.0nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:39,976 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<10uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:39,976 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:39,976 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<=2.0nM' (relation: '<='). Treating as exact value.
+2026-07-17 00:19:39,976 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~10uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:39,976 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.01nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:39,976 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<=100nM' (relation: '<='). Treating as exact value.
+2026-07-17 00:19:39,977 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<21nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:39,978 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~0.1pM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:39,978 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<=100uM' (relation: '<='). Treating as exact value.
+2026-07-17 00:19:39,979 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~10pM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,073 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1pM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,073 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1pM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,077 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.010uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,078 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~0.1uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,079 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.3uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,080 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.003uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,080 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.05uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,080 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.05uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,080 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~5mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,082 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.12nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,082 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~0.69pM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,083 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~11pM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,083 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~28pM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,084 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.003uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,085 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<20nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,085 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<5nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,086 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,086 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,086 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,088 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,089 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<100nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,090 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<2pM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:40,092 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~50uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,092 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<=0.6nM' (relation: '<='). Treating as exact value.
+2026-07-17 00:19:40,094 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~100uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,094 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~100uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:40,095 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.04nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,241 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~10nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:41,242 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.5nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,246 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~40mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:41,246 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<10uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,248 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1.0nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,248 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,248 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<3nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,248 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<=1nM' (relation: '<='). Treating as exact value.
+2026-07-17 00:19:41,250 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,252 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:41,253 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:41,255 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,258 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:41,258 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~20mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:41,258 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,258 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1mM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,258 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<60uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,262 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~300uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:41,262 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<50.0nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,265 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~5mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:41,265 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~5uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:41,265 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.001uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,265 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.003uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,265 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.004uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,265 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,265 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2.13nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:41,265 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<3nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,398 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<3nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,398 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<4nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,398 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<5nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,399 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<5nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,403 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.1mM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,403 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,403 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<100nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,403 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,405 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~102uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~125nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~5uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~74.3uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~85nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~2uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~55mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,409 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~55mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,409 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.01uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,409 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.01uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,409 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2.5nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,412 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~0.5uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,412 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~30nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:43,413 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,413 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:43,413 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<6nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,465 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~10nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,465 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~160nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,465 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,465 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,465 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~2uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,465 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~5uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,466 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.05uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,466 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,466 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,466 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,466 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,466 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<2nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,467 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~10uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,467 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~14uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,467 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~50uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,467 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,468 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<4nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,470 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~10uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,471 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~10uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,471 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,471 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~30uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,471 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~30uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,471 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~38nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,471 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.003uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,471 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:45,473 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1.7uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:45,474 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~200nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~200nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~3.6pM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~400nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~51nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~9.6uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.01nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.0845uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.2nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.2nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<10mM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,393 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<2mM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~1.3uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~1.3uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~67uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.001uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.086uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.086uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.086uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.086uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.086uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1.37uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<15nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,394 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:47,397 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1.3mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:47,397 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~10000nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:49,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~33uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:49,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~4mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:49,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.03uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.05nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,406 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~185uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:49,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~23mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:49,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~2uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:49,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~300nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:49,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~364nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:49,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~8.11uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:49,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.0005uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.01nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,408 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.025nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,409 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki~5uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:49,409 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.004uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,409 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,410 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,410 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,410 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,410 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,410 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,410 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<25nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,410 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<3nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:49,412 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~100uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,426 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,426 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<10nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,429 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~0.13uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,429 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1.5uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,429 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~200uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,429 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~50uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,429 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.001uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,429 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.01nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,430 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.001uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,430 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.005uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,430 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.2uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,430 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.32nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,430 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.3nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,430 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.3nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,430 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1.13nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,430 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<25nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,431 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<3nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,431 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<50nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,431 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<50nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,431 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<50nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,432 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~0.8mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,432 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~0.8mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,432 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~100uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,432 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~6nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,432 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<2nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:51,434 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~1.8uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:51,435 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~100nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,372 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~100nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,372 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~12uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,372 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~12uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,372 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~13uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,373 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~300nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,373 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~500uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,373 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~500uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,373 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~600uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,373 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~9uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,373 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.01uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,373 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.05nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,373 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,373 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,373 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,375 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<0.030uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,375 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,375 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<40nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,375 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<5nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,378 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~0.5uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,378 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1.8uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,378 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~1mM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,378 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~700nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:53,378 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.001nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,379 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.10uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,379 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.4uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,379 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:53,383 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~0.2uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,680 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~120nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,680 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~23uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,680 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~23uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,680 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~23uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,681 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~24uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,681 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~25uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,681 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~3nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,681 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~5uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,681 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~7nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,681 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~80uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,681 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1.0nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,682 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1.3nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,682 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,683 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,683 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,683 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,683 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,683 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,683 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<5pM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,686 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<15nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,686 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,686 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<1nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,686 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,686 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,686 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50<2nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:55,692 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~330uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:55,692 WARNING protliggnn.train - Censored or approximate affinity label detected: 'IC50~450uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:57,895 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<0.8nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:57,896 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<1.26nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:57,896 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<2.3nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:57,896 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<55uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:57,896 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd<55uM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:57,899 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~11uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:57,899 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~200nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:57,900 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~25uM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:57,900 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Kd~2nM' (relation: '~'). Treating as exact value.
+2026-07-17 00:19:57,900 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.005nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:57,900 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.005nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:57,900 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.005nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:19:57,900 WARNING protliggnn.train - Censored or approximate affinity label detected: 'Ki<0.9nM' (relation: '<'). Treating as exact value.
+2026-07-17 00:20:00,654 INFO protliggnn - Found 1000 candidate complexes with labels and matching files before validation.
+2026-07-17 00:20:00,662 INFO protliggnn - Found graph cache at data\pdbbind2020\processed_dataset.pt. Validating...
+2026-07-17 00:20:00,735 INFO protliggnn - Loading graphs from cache file...
+2026-07-17 00:20:01,105 INFO protliggnn - Cache successfully validated. Loaded 1000 pre-built graphs.
+2026-07-17 00:20:01,118 INFO protliggnn - Dataset split sizes: train=800 val=100 test=100 (random)
+2026-07-17 00:20:44,943 INFO protliggnn - Epoch 001 train loss=5.2600 PCC=0.0034 Spearman=0.0213 RMSE=2.2923 MAE=1.7879 R2=-0.6443
+2026-07-17 00:20:44,943 INFO protliggnn - Epoch 001 val loss=3.9305 PCC=0.3622 Spearman=0.3367 RMSE=1.9813 MAE=1.5723 R2=-0.3606
+2026-07-17 00:20:44,943 INFO protliggnn - Epoch 001 train diagnostics: Affinity Loss=5.2546 | Contact Loss=0.0534 | Total Loss=5.2600 | Pos Acc=0.0033 | Neg Acc=0.9975 | Precision=0.0074 | Recall=0.0033 | F1=0.0046 | Avg Prob=0.0110
+2026-07-17 00:20:44,943 INFO protliggnn - Epoch 001 val diagnostics: Affinity Loss=3.9257 | Contact Loss=0.0475 | Total Loss=3.9305 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0060
+2026-07-17 00:20:45,100 INFO protliggnn - Saved checkpoint for epoch 1 with validation RMSE 1.9813484029339128.
+2026-07-17 00:21:24,678 INFO protliggnn - Epoch 002 train loss=4.1507 PCC=0.0815 Spearman=0.0648 RMSE=2.0362 MAE=1.6241 R2=-0.2974
+2026-07-17 00:21:24,679 INFO protliggnn - Epoch 002 val loss=5.5719 PCC=0.4362 Spearman=0.3555 RMSE=2.3595 MAE=1.8855 R2=-0.9295
+2026-07-17 00:21:24,679 INFO protliggnn - Epoch 002 train diagnostics: Affinity Loss=4.1460 | Contact Loss=0.0466 | Total Loss=4.1507 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0080
+2026-07-17 00:21:24,679 INFO protliggnn - Epoch 002 val diagnostics: Affinity Loss=5.5672 | Contact Loss=0.0469 | Total Loss=5.5719 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0075
+2026-07-17 00:22:01,428 INFO protliggnn - Epoch 003 train loss=3.6932 PCC=0.1881 Spearman=0.1814 RMSE=1.9206 MAE=1.5419 R2=-0.1542
+2026-07-17 00:22:01,429 INFO protliggnn - Epoch 003 val loss=2.4824 PCC=0.4476 Spearman=0.3712 RMSE=1.5741 MAE=1.3023 R2=0.1413
+2026-07-17 00:22:01,429 INFO protliggnn - Epoch 003 train diagnostics: Affinity Loss=3.6886 | Contact Loss=0.0462 | Total Loss=3.6932 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0082
+2026-07-17 00:22:01,429 INFO protliggnn - Epoch 003 val diagnostics: Affinity Loss=2.4777 | Contact Loss=0.0468 | Total Loss=2.4824 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0066
+2026-07-17 00:22:01,505 INFO protliggnn - Saved checkpoint for epoch 3 with validation RMSE 1.5740758866938842.
+2026-07-17 00:22:34,995 INFO protliggnn - Epoch 004 train loss=3.7187 PCC=0.2133 Spearman=0.1971 RMSE=1.9272 MAE=1.5553 R2=-0.1622
+2026-07-17 00:22:34,995 INFO protliggnn - Epoch 004 val loss=2.5524 PCC=0.4290 Spearman=0.3585 RMSE=1.5962 MAE=1.3033 R2=0.1170
+2026-07-17 00:22:34,995 INFO protliggnn - Epoch 004 train diagnostics: Affinity Loss=3.7141 | Contact Loss=0.0462 | Total Loss=3.7187 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0081
+2026-07-17 00:22:34,995 INFO protliggnn - Epoch 004 val diagnostics: Affinity Loss=2.5477 | Contact Loss=0.0465 | Total Loss=2.5524 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0103
+2026-07-17 00:23:08,339 INFO protliggnn - Epoch 005 train loss=3.8240 PCC=0.1900 Spearman=0.1828 RMSE=1.9543 MAE=1.5628 R2=-0.1952
+2026-07-17 00:23:08,339 INFO protliggnn - Epoch 005 val loss=2.4719 PCC=0.4551 Spearman=0.3819 RMSE=1.5708 MAE=1.2521 R2=0.1449
+2026-07-17 00:23:08,339 INFO protliggnn - Epoch 005 train diagnostics: Affinity Loss=3.8194 | Contact Loss=0.0461 | Total Loss=3.8240 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0082
+2026-07-17 00:23:08,339 INFO protliggnn - Epoch 005 val diagnostics: Affinity Loss=2.4673 | Contact Loss=0.0464 | Total Loss=2.4719 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0071
+2026-07-17 00:23:08,397 INFO protliggnn - Saved checkpoint for epoch 5 with validation RMSE 1.5707647226247652.
+2026-07-17 00:23:43,896 INFO protliggnn - Epoch 006 train loss=3.2384 PCC=0.3101 Spearman=0.3070 RMSE=1.7983 MAE=1.4205 R2=-0.0119
+2026-07-17 00:23:43,897 INFO protliggnn - Epoch 006 val loss=2.3139 PCC=0.4558 Spearman=0.3575 RMSE=1.5196 MAE=1.2609 R2=0.1997
+2026-07-17 00:23:43,897 INFO protliggnn - Epoch 006 train diagnostics: Affinity Loss=3.2338 | Contact Loss=0.0462 | Total Loss=3.2384 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0081
+2026-07-17 00:23:43,897 INFO protliggnn - Epoch 006 val diagnostics: Affinity Loss=2.3093 | Contact Loss=0.0469 | Total Loss=2.3139 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0063
+2026-07-17 00:23:43,950 INFO protliggnn - Saved checkpoint for epoch 6 with validation RMSE 1.519622649399948.
+2026-07-17 00:24:26,775 INFO protliggnn - Epoch 007 train loss=3.3271 PCC=0.3088 Spearman=0.2974 RMSE=1.8228 MAE=1.4772 R2=-0.0397
+2026-07-17 00:24:26,775 INFO protliggnn - Epoch 007 val loss=2.6583 PCC=0.4663 Spearman=0.3694 RMSE=1.6290 MAE=1.3106 R2=0.0803
+2026-07-17 00:24:26,775 INFO protliggnn - Epoch 007 train diagnostics: Affinity Loss=3.3225 | Contact Loss=0.0461 | Total Loss=3.3271 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0081
+2026-07-17 00:24:26,775 INFO protliggnn - Epoch 007 val diagnostics: Affinity Loss=2.6536 | Contact Loss=0.0466 | Total Loss=2.6583 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0075
+2026-07-17 00:25:08,072 INFO protliggnn - Epoch 008 train loss=3.3366 PCC=0.3358 Spearman=0.3193 RMSE=1.8254 MAE=1.4503 R2=-0.0426
+2026-07-17 00:25:08,072 INFO protliggnn - Epoch 008 val loss=2.3831 PCC=0.4712 Spearman=0.3872 RMSE=1.5422 MAE=1.2904 R2=0.1757
+2026-07-17 00:25:08,072 INFO protliggnn - Epoch 008 train diagnostics: Affinity Loss=3.3320 | Contact Loss=0.0461 | Total Loss=3.3366 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:25:08,072 INFO protliggnn - Epoch 008 val diagnostics: Affinity Loss=2.3784 | Contact Loss=0.0468 | Total Loss=2.3831 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0063
+2026-07-17 00:25:44,326 INFO protliggnn - Epoch 009 train loss=3.3762 PCC=0.3437 Spearman=0.3272 RMSE=1.8362 MAE=1.4580 R2=-0.0550
+2026-07-17 00:25:44,326 INFO protliggnn - Epoch 009 val loss=3.5974 PCC=0.5008 Spearman=0.4061 RMSE=1.8954 MAE=1.5585 R2=-0.2452
+2026-07-17 00:25:44,326 INFO protliggnn - Epoch 009 train diagnostics: Affinity Loss=3.3716 | Contact Loss=0.0462 | Total Loss=3.3762 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:25:44,326 INFO protliggnn - Epoch 009 val diagnostics: Affinity Loss=3.5927 | Contact Loss=0.0466 | Total Loss=3.5974 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0086
+2026-07-17 00:26:19,933 INFO protliggnn - Epoch 010 train loss=3.1905 PCC=0.3762 Spearman=0.3621 RMSE=1.7849 MAE=1.4278 R2=0.0031
+2026-07-17 00:26:19,933 INFO protliggnn - Epoch 010 val loss=3.0246 PCC=0.4703 Spearman=0.3914 RMSE=1.7378 MAE=1.4038 R2=-0.0467
+2026-07-17 00:26:19,933 INFO protliggnn - Epoch 010 train diagnostics: Affinity Loss=3.1859 | Contact Loss=0.0463 | Total Loss=3.1905 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0080
+2026-07-17 00:26:19,933 INFO protliggnn - Epoch 010 val diagnostics: Affinity Loss=3.0199 | Contact Loss=0.0467 | Total Loss=3.0246 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0083
+2026-07-17 00:26:55,004 INFO protliggnn - Epoch 011 train loss=2.7956 PCC=0.4342 Spearman=0.4213 RMSE=1.6706 MAE=1.3403 R2=0.1267
+2026-07-17 00:26:55,004 INFO protliggnn - Epoch 011 val loss=2.2098 PCC=0.5008 Spearman=0.4078 RMSE=1.4850 MAE=1.2141 R2=0.2357
+2026-07-17 00:26:55,004 INFO protliggnn - Epoch 011 train diagnostics: Affinity Loss=2.7909 | Contact Loss=0.0464 | Total Loss=2.7956 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0080
+2026-07-17 00:26:55,004 INFO protliggnn - Epoch 011 val diagnostics: Affinity Loss=2.2051 | Contact Loss=0.0466 | Total Loss=2.2098 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0078
+2026-07-17 00:26:55,058 INFO protliggnn - Saved checkpoint for epoch 11 with validation RMSE 1.4849597371740437.
+2026-07-17 00:27:29,764 INFO protliggnn - Epoch 012 train loss=3.0050 PCC=0.4041 Spearman=0.3853 RMSE=1.7322 MAE=1.4072 R2=0.0611
+2026-07-17 00:27:29,764 INFO protliggnn - Epoch 012 val loss=2.5577 PCC=0.4773 Spearman=0.3580 RMSE=1.5978 MAE=1.3160 R2=0.1152
+2026-07-17 00:27:29,764 INFO protliggnn - Epoch 012 train diagnostics: Affinity Loss=3.0004 | Contact Loss=0.0461 | Total Loss=3.0050 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0081
+2026-07-17 00:27:29,764 INFO protliggnn - Epoch 012 val diagnostics: Affinity Loss=2.5531 | Contact Loss=0.0467 | Total Loss=2.5577 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:28:03,525 INFO protliggnn - Epoch 013 train loss=2.9677 PCC=0.3962 Spearman=0.3866 RMSE=1.7214 MAE=1.3881 R2=0.0728
+2026-07-17 00:28:03,525 INFO protliggnn - Epoch 013 val loss=2.5059 PCC=0.4563 Spearman=0.3925 RMSE=1.5815 MAE=1.2752 R2=0.1331
+2026-07-17 00:28:03,525 INFO protliggnn - Epoch 013 train diagnostics: Affinity Loss=2.9631 | Contact Loss=0.0462 | Total Loss=2.9677 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0081
+2026-07-17 00:28:03,525 INFO protliggnn - Epoch 013 val diagnostics: Affinity Loss=2.5012 | Contact Loss=0.0468 | Total Loss=2.5059 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0092
+2026-07-17 00:28:37,464 INFO protliggnn - Epoch 014 train loss=3.1178 PCC=0.3949 Spearman=0.3796 RMSE=1.7644 MAE=1.4134 R2=0.0258
+2026-07-17 00:28:37,464 INFO protliggnn - Epoch 014 val loss=2.8799 PCC=0.5044 Spearman=0.4150 RMSE=1.6957 MAE=1.3599 R2=0.0035
+2026-07-17 00:28:37,464 INFO protliggnn - Epoch 014 train diagnostics: Affinity Loss=3.1132 | Contact Loss=0.0461 | Total Loss=3.1178 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0080
+2026-07-17 00:28:37,464 INFO protliggnn - Epoch 014 val diagnostics: Affinity Loss=2.8753 | Contact Loss=0.0465 | Total Loss=2.8799 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0070
+2026-07-17 00:29:12,884 INFO protliggnn - Epoch 015 train loss=3.2173 PCC=0.3842 Spearman=0.3698 RMSE=1.7924 MAE=1.4235 R2=-0.0053
+2026-07-17 00:29:12,884 INFO protliggnn - Epoch 015 val loss=2.5384 PCC=0.5044 Spearman=0.4357 RMSE=1.5918 MAE=1.2671 R2=0.1218
+2026-07-17 00:29:12,884 INFO protliggnn - Epoch 015 train diagnostics: Affinity Loss=3.2127 | Contact Loss=0.0462 | Total Loss=3.2173 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:29:12,884 INFO protliggnn - Epoch 015 val diagnostics: Affinity Loss=2.5337 | Contact Loss=0.0468 | Total Loss=2.5384 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0064
+2026-07-17 00:29:48,029 INFO protliggnn - Epoch 016 train loss=2.9145 PCC=0.4364 Spearman=0.4276 RMSE=1.7058 MAE=1.3531 R2=0.0894
+2026-07-17 00:29:48,029 INFO protliggnn - Epoch 016 val loss=2.2203 PCC=0.5162 Spearman=0.4346 RMSE=1.4885 MAE=1.1801 R2=0.2321
+2026-07-17 00:29:48,029 INFO protliggnn - Epoch 016 train diagnostics: Affinity Loss=2.9099 | Contact Loss=0.0463 | Total Loss=2.9145 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:29:48,029 INFO protliggnn - Epoch 016 val diagnostics: Affinity Loss=2.2156 | Contact Loss=0.0468 | Total Loss=2.2203 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0077
+2026-07-17 00:30:22,568 INFO protliggnn - Epoch 017 train loss=2.8012 PCC=0.4713 Spearman=0.4423 RMSE=1.6723 MAE=1.3543 R2=0.1249
+2026-07-17 00:30:22,568 INFO protliggnn - Epoch 017 val loss=2.1071 PCC=0.5438 Spearman=0.4333 RMSE=1.4500 MAE=1.1958 R2=0.2713
+2026-07-17 00:30:22,568 INFO protliggnn - Epoch 017 train diagnostics: Affinity Loss=2.7966 | Contact Loss=0.0463 | Total Loss=2.8012 | Pos Acc=0.0001 | Neg Acc=1.0000 | Precision=0.0357 | Recall=0.0001 | F1=0.0002 | Avg Prob=0.0080
+2026-07-17 00:30:22,568 INFO protliggnn - Epoch 017 val diagnostics: Affinity Loss=2.1024 | Contact Loss=0.0467 | Total Loss=2.1071 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0091
+2026-07-17 00:30:22,644 INFO protliggnn - Saved checkpoint for epoch 17 with validation RMSE 1.44997588798098.
+2026-07-17 00:30:58,836 INFO protliggnn - Epoch 018 train loss=2.8605 PCC=0.4625 Spearman=0.4313 RMSE=1.6899 MAE=1.3585 R2=0.1063
+2026-07-17 00:30:58,836 INFO protliggnn - Epoch 018 val loss=3.0581 PCC=0.5222 Spearman=0.3758 RMSE=1.7474 MAE=1.4264 R2=-0.0583
+2026-07-17 00:30:58,836 INFO protliggnn - Epoch 018 train diagnostics: Affinity Loss=2.8559 | Contact Loss=0.0461 | Total Loss=2.8605 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0081
+2026-07-17 00:30:58,836 INFO protliggnn - Epoch 018 val diagnostics: Affinity Loss=3.0534 | Contact Loss=0.0466 | Total Loss=3.0581 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0083
+2026-07-17 00:31:33,420 INFO protliggnn - Epoch 019 train loss=2.6812 PCC=0.4990 Spearman=0.4942 RMSE=1.6360 MAE=1.2884 R2=0.1624
+2026-07-17 00:31:33,420 INFO protliggnn - Epoch 019 val loss=2.2020 PCC=0.5255 Spearman=0.4051 RMSE=1.4823 MAE=1.2309 R2=0.2384
+2026-07-17 00:31:33,420 INFO protliggnn - Epoch 019 train diagnostics: Affinity Loss=2.6766 | Contact Loss=0.0460 | Total Loss=2.6812 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0078
+2026-07-17 00:31:33,420 INFO protliggnn - Epoch 019 val diagnostics: Affinity Loss=2.1973 | Contact Loss=0.0467 | Total Loss=2.2020 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0068
+2026-07-17 00:32:07,343 INFO protliggnn - Epoch 020 train loss=2.3888 PCC=0.5515 Spearman=0.5203 RMSE=1.5441 MAE=1.2383 R2=0.2539
+2026-07-17 00:32:07,343 INFO protliggnn - Epoch 020 val loss=2.3408 PCC=0.5040 Spearman=0.4112 RMSE=1.5285 MAE=1.2466 R2=0.1903
+2026-07-17 00:32:07,343 INFO protliggnn - Epoch 020 train diagnostics: Affinity Loss=2.3842 | Contact Loss=0.0461 | Total Loss=2.3888 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:32:07,343 INFO protliggnn - Epoch 020 val diagnostics: Affinity Loss=2.3362 | Contact Loss=0.0467 | Total Loss=2.3408 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0073
+2026-07-17 00:32:42,076 INFO protliggnn - Epoch 021 train loss=2.3169 PCC=0.5700 Spearman=0.5564 RMSE=1.5206 MAE=1.1977 R2=0.2764
+2026-07-17 00:32:42,076 INFO protliggnn - Epoch 021 val loss=2.4351 PCC=0.5153 Spearman=0.4048 RMSE=1.5590 MAE=1.2675 R2=0.1577
+2026-07-17 00:32:42,076 INFO protliggnn - Epoch 021 train diagnostics: Affinity Loss=2.3123 | Contact Loss=0.0461 | Total Loss=2.3169 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:32:42,076 INFO protliggnn - Epoch 021 val diagnostics: Affinity Loss=2.4304 | Contact Loss=0.0466 | Total Loss=2.4351 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0091
+2026-07-17 00:33:17,624 INFO protliggnn - Epoch 022 train loss=2.3082 PCC=0.5726 Spearman=0.5430 RMSE=1.5178 MAE=1.1920 R2=0.2792
+2026-07-17 00:33:17,625 INFO protliggnn - Epoch 022 val loss=2.0579 PCC=0.5615 Spearman=0.4658 RMSE=1.4329 MAE=1.1802 R2=0.2884
+2026-07-17 00:33:17,625 INFO protliggnn - Epoch 022 train diagnostics: Affinity Loss=2.3036 | Contact Loss=0.0460 | Total Loss=2.3082 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0078
+2026-07-17 00:33:17,625 INFO protliggnn - Epoch 022 val diagnostics: Affinity Loss=2.0533 | Contact Loss=0.0466 | Total Loss=2.0579 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0086
+2026-07-17 00:33:17,688 INFO protliggnn - Saved checkpoint for epoch 22 with validation RMSE 1.4329183251148674.
+2026-07-17 00:33:54,511 INFO protliggnn - Epoch 023 train loss=2.4807 PCC=0.5499 Spearman=0.5238 RMSE=1.5736 MAE=1.2626 R2=0.2252
+2026-07-17 00:33:54,512 INFO protliggnn - Epoch 023 val loss=2.3971 PCC=0.5669 Spearman=0.4846 RMSE=1.5468 MAE=1.2440 R2=0.1708
+2026-07-17 00:33:54,512 INFO protliggnn - Epoch 023 train diagnostics: Affinity Loss=2.4761 | Contact Loss=0.0460 | Total Loss=2.4807 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:33:54,512 INFO protliggnn - Epoch 023 val diagnostics: Affinity Loss=2.3924 | Contact Loss=0.0467 | Total Loss=2.3971 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0095
+2026-07-17 00:34:29,776 INFO protliggnn - Epoch 024 train loss=2.4137 PCC=0.5647 Spearman=0.5551 RMSE=1.5521 MAE=1.2442 R2=0.2461
+2026-07-17 00:34:29,776 INFO protliggnn - Epoch 024 val loss=2.6708 PCC=0.5690 Spearman=0.4556 RMSE=1.6328 MAE=1.2846 R2=0.0760
+2026-07-17 00:34:29,776 INFO protliggnn - Epoch 024 train diagnostics: Affinity Loss=2.4091 | Contact Loss=0.0460 | Total Loss=2.4137 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0078
+2026-07-17 00:34:29,776 INFO protliggnn - Epoch 024 val diagnostics: Affinity Loss=2.6662 | Contact Loss=0.0465 | Total Loss=2.6708 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0073
+2026-07-17 00:35:03,497 INFO protliggnn - Epoch 025 train loss=2.5846 PCC=0.5297 Spearman=0.5059 RMSE=1.6062 MAE=1.2603 R2=0.1927
+2026-07-17 00:35:03,497 INFO protliggnn - Epoch 025 val loss=2.7125 PCC=0.5322 Spearman=0.4065 RMSE=1.6455 MAE=1.3246 R2=0.0615
+2026-07-17 00:35:03,497 INFO protliggnn - Epoch 025 train diagnostics: Affinity Loss=2.5800 | Contact Loss=0.0462 | Total Loss=2.5846 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0080
+2026-07-17 00:35:03,497 INFO protliggnn - Epoch 025 val diagnostics: Affinity Loss=2.7078 | Contact Loss=0.0467 | Total Loss=2.7125 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0086
+2026-07-17 00:35:38,385 INFO protliggnn - Epoch 026 train loss=1.9947 PCC=0.6422 Spearman=0.6147 RMSE=1.4107 MAE=1.1143 R2=0.3772
+2026-07-17 00:35:38,385 INFO protliggnn - Epoch 026 val loss=2.1712 PCC=0.5643 Spearman=0.4660 RMSE=1.4719 MAE=1.2007 R2=0.2491
+2026-07-17 00:35:38,385 INFO protliggnn - Epoch 026 train diagnostics: Affinity Loss=1.9901 | Contact Loss=0.0461 | Total Loss=1.9947 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:35:38,385 INFO protliggnn - Epoch 026 val diagnostics: Affinity Loss=2.1665 | Contact Loss=0.0467 | Total Loss=2.1712 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0069
+2026-07-17 00:36:13,372 INFO protliggnn - Epoch 027 train loss=2.3274 PCC=0.5801 Spearman=0.5564 RMSE=1.5241 MAE=1.2341 R2=0.2732
+2026-07-17 00:36:13,372 INFO protliggnn - Epoch 027 val loss=2.3546 PCC=0.5278 Spearman=0.4240 RMSE=1.5330 MAE=1.2129 R2=0.1855
+2026-07-17 00:36:13,372 INFO protliggnn - Epoch 027 train diagnostics: Affinity Loss=2.3228 | Contact Loss=0.0461 | Total Loss=2.3274 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:36:13,372 INFO protliggnn - Epoch 027 val diagnostics: Affinity Loss=2.3500 | Contact Loss=0.0465 | Total Loss=2.3546 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0072
+2026-07-17 00:36:47,327 INFO protliggnn - Epoch 028 train loss=2.3301 PCC=0.5863 Spearman=0.5659 RMSE=1.5250 MAE=1.1934 R2=0.2723
+2026-07-17 00:36:47,327 INFO protliggnn - Epoch 028 val loss=2.2749 PCC=0.5844 Spearman=0.5358 RMSE=1.5067 MAE=1.1943 R2=0.2132
+2026-07-17 00:36:47,327 INFO protliggnn - Epoch 028 train diagnostics: Affinity Loss=2.3255 | Contact Loss=0.0459 | Total Loss=2.3301 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0077
+2026-07-17 00:36:47,327 INFO protliggnn - Epoch 028 val diagnostics: Affinity Loss=2.2703 | Contact Loss=0.0465 | Total Loss=2.2749 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:37:21,041 INFO protliggnn - Epoch 029 train loss=1.8688 PCC=0.6670 Spearman=0.6453 RMSE=1.3654 MAE=1.0930 R2=0.4166
+2026-07-17 00:37:21,042 INFO protliggnn - Epoch 029 val loss=3.2583 PCC=0.5637 Spearman=0.4692 RMSE=1.8038 MAE=1.4586 R2=-0.1277
+2026-07-17 00:37:21,042 INFO protliggnn - Epoch 029 train diagnostics: Affinity Loss=1.8642 | Contact Loss=0.0460 | Total Loss=1.8688 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0078
+2026-07-17 00:37:21,042 INFO protliggnn - Epoch 029 val diagnostics: Affinity Loss=3.2537 | Contact Loss=0.0465 | Total Loss=3.2583 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0067
+2026-07-17 00:37:56,120 INFO protliggnn - Epoch 030 train loss=2.0044 PCC=0.6448 Spearman=0.6412 RMSE=1.4142 MAE=1.1066 R2=0.3742
+2026-07-17 00:37:56,120 INFO protliggnn - Epoch 030 val loss=3.9076 PCC=0.4621 Spearman=0.3777 RMSE=1.9756 MAE=1.5979 R2=-0.3527
+2026-07-17 00:37:56,120 INFO protliggnn - Epoch 030 train diagnostics: Affinity Loss=1.9998 | Contact Loss=0.0459 | Total Loss=2.0044 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0077
+2026-07-17 00:37:56,120 INFO protliggnn - Epoch 030 val diagnostics: Affinity Loss=3.9029 | Contact Loss=0.0468 | Total Loss=3.9076 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0103
+2026-07-17 00:38:30,507 INFO protliggnn - Epoch 031 train loss=1.9607 PCC=0.6549 Spearman=0.6396 RMSE=1.3986 MAE=1.1147 R2=0.3879
+2026-07-17 00:38:30,508 INFO protliggnn - Epoch 031 val loss=2.0265 PCC=0.5841 Spearman=0.5076 RMSE=1.4219 MAE=1.1222 R2=0.2993
+2026-07-17 00:38:30,508 INFO protliggnn - Epoch 031 train diagnostics: Affinity Loss=1.9561 | Contact Loss=0.0460 | Total Loss=1.9607 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0079
+2026-07-17 00:38:30,508 INFO protliggnn - Epoch 031 val diagnostics: Affinity Loss=2.0219 | Contact Loss=0.0463 | Total Loss=2.0265 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0073
+2026-07-17 00:38:30,565 INFO protliggnn - Saved checkpoint for epoch 31 with validation RMSE 1.4219200044473266.
+2026-07-17 00:39:17,169 INFO protliggnn - Epoch 032 train loss=1.8872 PCC=0.6669 Spearman=0.6508 RMSE=1.3721 MAE=1.0770 R2=0.4109
+2026-07-17 00:39:17,169 INFO protliggnn - Epoch 032 val loss=2.1310 PCC=0.5716 Spearman=0.4964 RMSE=1.4582 MAE=1.1716 R2=0.2630
+2026-07-17 00:39:17,169 INFO protliggnn - Epoch 032 train diagnostics: Affinity Loss=1.8827 | Contact Loss=0.0457 | Total Loss=1.8872 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0077
+2026-07-17 00:39:17,169 INFO protliggnn - Epoch 032 val diagnostics: Affinity Loss=2.1264 | Contact Loss=0.0464 | Total Loss=2.1310 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0068
+2026-07-17 00:40:04,409 INFO protliggnn - Epoch 033 train loss=2.0059 PCC=0.6488 Spearman=0.6183 RMSE=1.4147 MAE=1.1228 R2=0.3737
+2026-07-17 00:40:04,409 INFO protliggnn - Epoch 033 val loss=2.3668 PCC=0.5721 Spearman=0.5026 RMSE=1.5369 MAE=1.1989 R2=0.1813
+2026-07-17 00:40:04,409 INFO protliggnn - Epoch 033 train diagnostics: Affinity Loss=2.0014 | Contact Loss=0.0458 | Total Loss=2.0059 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0077
+2026-07-17 00:40:04,409 INFO protliggnn - Epoch 033 val diagnostics: Affinity Loss=2.3621 | Contact Loss=0.0466 | Total Loss=2.3668 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0095
+2026-07-17 00:40:58,598 INFO protliggnn - Epoch 034 train loss=2.0328 PCC=0.6526 Spearman=0.6439 RMSE=1.4241 MAE=1.1457 R2=0.3653
+2026-07-17 00:40:58,598 INFO protliggnn - Epoch 034 val loss=2.0921 PCC=0.5908 Spearman=0.5215 RMSE=1.4448 MAE=1.1282 R2=0.2765
+2026-07-17 00:40:58,599 INFO protliggnn - Epoch 034 train diagnostics: Affinity Loss=2.0282 | Contact Loss=0.0458 | Total Loss=2.0328 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0078
+2026-07-17 00:40:58,599 INFO protliggnn - Epoch 034 val diagnostics: Affinity Loss=2.0875 | Contact Loss=0.0463 | Total Loss=2.0921 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0075
+2026-07-17 00:41:50,189 INFO protliggnn - Epoch 035 train loss=1.8684 PCC=0.6754 Spearman=0.6563 RMSE=1.3652 MAE=1.0838 R2=0.4168
+2026-07-17 00:41:50,189 INFO protliggnn - Epoch 035 val loss=2.6183 PCC=0.6002 Spearman=0.5235 RMSE=1.6167 MAE=1.3200 R2=0.0942
+2026-07-17 00:41:50,190 INFO protliggnn - Epoch 035 train diagnostics: Affinity Loss=1.8638 | Contact Loss=0.0458 | Total Loss=1.8684 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0076
+2026-07-17 00:41:50,190 INFO protliggnn - Epoch 035 val diagnostics: Affinity Loss=2.6136 | Contact Loss=0.0463 | Total Loss=2.6183 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0090
+2026-07-17 00:42:39,334 INFO protliggnn - Epoch 036 train loss=1.9013 PCC=0.6672 Spearman=0.6400 RMSE=1.3772 MAE=1.0956 R2=0.4065
+2026-07-17 00:42:39,334 INFO protliggnn - Epoch 036 val loss=2.5036 PCC=0.6138 Spearman=0.5154 RMSE=1.5808 MAE=1.2542 R2=0.1339
+2026-07-17 00:42:39,334 INFO protliggnn - Epoch 036 train diagnostics: Affinity Loss=1.8968 | Contact Loss=0.0457 | Total Loss=1.9013 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0076
+2026-07-17 00:42:39,335 INFO protliggnn - Epoch 036 val diagnostics: Affinity Loss=2.4989 | Contact Loss=0.0463 | Total Loss=2.5036 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0088
+2026-07-17 00:43:28,135 INFO protliggnn - Epoch 037 train loss=1.9389 PCC=0.6658 Spearman=0.6460 RMSE=1.3908 MAE=1.1216 R2=0.3947
+2026-07-17 00:43:28,135 INFO protliggnn - Epoch 037 val loss=2.0202 PCC=0.6094 Spearman=0.5117 RMSE=1.4197 MAE=1.1248 R2=0.3015
+2026-07-17 00:43:28,135 INFO protliggnn - Epoch 037 train diagnostics: Affinity Loss=1.9344 | Contact Loss=0.0457 | Total Loss=1.9389 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0076
+2026-07-17 00:43:28,136 INFO protliggnn - Epoch 037 val diagnostics: Affinity Loss=2.0155 | Contact Loss=0.0465 | Total Loss=2.0202 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0096
+2026-07-17 00:43:28,220 INFO protliggnn - Saved checkpoint for epoch 37 with validation RMSE 1.4196925847899606.
+2026-07-17 00:44:16,729 INFO protliggnn - Epoch 038 train loss=1.5655 PCC=0.7340 Spearman=0.7201 RMSE=1.2494 MAE=0.9793 R2=0.5115
+2026-07-17 00:44:16,729 INFO protliggnn - Epoch 038 val loss=2.0277 PCC=0.6236 Spearman=0.5559 RMSE=1.4223 MAE=1.1101 R2=0.2989
+2026-07-17 00:44:16,729 INFO protliggnn - Epoch 038 train diagnostics: Affinity Loss=1.5610 | Contact Loss=0.0455 | Total Loss=1.5655 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0076
+2026-07-17 00:44:16,729 INFO protliggnn - Epoch 038 val diagnostics: Affinity Loss=2.0230 | Contact Loss=0.0462 | Total Loss=2.0277 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0071
+2026-07-17 00:45:05,069 INFO protliggnn - Epoch 039 train loss=1.6592 PCC=0.7206 Spearman=0.7059 RMSE=1.2863 MAE=1.0109 R2=0.4822
+2026-07-17 00:45:05,069 INFO protliggnn - Epoch 039 val loss=2.0665 PCC=0.6059 Spearman=0.5710 RMSE=1.4359 MAE=1.1094 R2=0.2854
+2026-07-17 00:45:05,069 INFO protliggnn - Epoch 039 train diagnostics: Affinity Loss=1.6547 | Contact Loss=0.0454 | Total Loss=1.6592 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0075
+2026-07-17 00:45:05,069 INFO protliggnn - Epoch 039 val diagnostics: Affinity Loss=2.0618 | Contact Loss=0.0475 | Total Loss=2.0665 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0131
+2026-07-17 00:45:53,885 INFO protliggnn - Epoch 040 train loss=1.4490 PCC=0.7562 Spearman=0.7443 RMSE=1.2019 MAE=0.9340 R2=0.5480
+2026-07-17 00:45:53,885 INFO protliggnn - Epoch 040 val loss=1.9356 PCC=0.6080 Spearman=0.5586 RMSE=1.3896 MAE=1.1011 R2=0.3308
+2026-07-17 00:45:53,885 INFO protliggnn - Epoch 040 train diagnostics: Affinity Loss=1.4445 | Contact Loss=0.0455 | Total Loss=1.4490 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0076
+2026-07-17 00:45:53,885 INFO protliggnn - Epoch 040 val diagnostics: Affinity Loss=1.9310 | Contact Loss=0.0461 | Total Loss=1.9356 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0105
+2026-07-17 00:45:53,961 INFO protliggnn - Saved checkpoint for epoch 40 with validation RMSE 1.3896026142140152.
+2026-07-17 00:46:41,932 INFO protliggnn - Epoch 041 train loss=1.6016 PCC=0.7331 Spearman=0.7180 RMSE=1.2637 MAE=0.9960 R2=0.5002
+2026-07-17 00:46:41,932 INFO protliggnn - Epoch 041 val loss=2.0235 PCC=0.5810 Spearman=0.5045 RMSE=1.4209 MAE=1.1493 R2=0.3003
+2026-07-17 00:46:41,932 INFO protliggnn - Epoch 041 train diagnostics: Affinity Loss=1.5970 | Contact Loss=0.0455 | Total Loss=1.6016 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0077
+2026-07-17 00:46:41,932 INFO protliggnn - Epoch 041 val diagnostics: Affinity Loss=2.0189 | Contact Loss=0.0467 | Total Loss=2.0235 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0111
+2026-07-17 00:47:30,966 INFO protliggnn - Epoch 042 train loss=2.0544 PCC=0.6396 Spearman=0.6232 RMSE=1.4317 MAE=1.1162 R2=0.3586
+2026-07-17 00:47:30,966 INFO protliggnn - Epoch 042 val loss=2.3227 PCC=0.5714 Spearman=0.5033 RMSE=1.5225 MAE=1.2147 R2=0.1966
+2026-07-17 00:47:30,966 INFO protliggnn - Epoch 042 train diagnostics: Affinity Loss=2.0498 | Contact Loss=0.0455 | Total Loss=2.0544 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0076
+2026-07-17 00:47:30,966 INFO protliggnn - Epoch 042 val diagnostics: Affinity Loss=2.3181 | Contact Loss=0.0465 | Total Loss=2.3227 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0098
+2026-07-17 00:48:20,118 INFO protliggnn - Epoch 043 train loss=2.1212 PCC=0.6378 Spearman=0.6192 RMSE=1.4549 MAE=1.1195 R2=0.3376
+2026-07-17 00:48:20,118 INFO protliggnn - Epoch 043 val loss=2.0180 PCC=0.5800 Spearman=0.4914 RMSE=1.4189 MAE=1.1248 R2=0.3022
+2026-07-17 00:48:20,118 INFO protliggnn - Epoch 043 train diagnostics: Affinity Loss=2.1167 | Contact Loss=0.0455 | Total Loss=2.1212 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0076
+2026-07-17 00:48:20,119 INFO protliggnn - Epoch 043 val diagnostics: Affinity Loss=2.0134 | Contact Loss=0.0461 | Total Loss=2.0180 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0075
+2026-07-17 00:49:10,004 INFO protliggnn - Epoch 044 train loss=2.1734 PCC=0.6207 Spearman=0.5918 RMSE=1.4727 MAE=1.1633 R2=0.3213
+2026-07-17 00:49:10,004 INFO protliggnn - Epoch 044 val loss=2.3734 PCC=0.4992 Spearman=0.3743 RMSE=1.5391 MAE=1.2507 R2=0.1790
+2026-07-17 00:49:10,005 INFO protliggnn - Epoch 044 train diagnostics: Affinity Loss=2.1688 | Contact Loss=0.0456 | Total Loss=2.1734 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0075
+2026-07-17 00:49:10,005 INFO protliggnn - Epoch 044 val diagnostics: Affinity Loss=2.3687 | Contact Loss=0.0471 | Total Loss=2.3734 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0116
+2026-07-17 00:50:01,990 INFO protliggnn - Epoch 045 train loss=1.8086 PCC=0.6815 Spearman=0.6515 RMSE=1.3431 MAE=1.0608 R2=0.4355
+2026-07-17 00:50:01,990 INFO protliggnn - Epoch 045 val loss=2.1204 PCC=0.6177 Spearman=0.5505 RMSE=1.4546 MAE=1.1157 R2=0.2667
+2026-07-17 00:50:01,991 INFO protliggnn - Epoch 045 train diagnostics: Affinity Loss=1.8040 | Contact Loss=0.0453 | Total Loss=1.8086 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0077
+2026-07-17 00:50:01,991 INFO protliggnn - Epoch 045 val diagnostics: Affinity Loss=2.1158 | Contact Loss=0.0465 | Total Loss=2.1204 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0057
+2026-07-17 00:50:53,322 INFO protliggnn - Epoch 046 train loss=1.7149 PCC=0.7135 Spearman=0.7099 RMSE=1.3078 MAE=1.0367 R2=0.4648
+2026-07-17 00:50:53,322 INFO protliggnn - Epoch 046 val loss=1.9666 PCC=0.6340 Spearman=0.5861 RMSE=1.4007 MAE=1.1454 R2=0.3200
+2026-07-17 00:50:53,322 INFO protliggnn - Epoch 046 train diagnostics: Affinity Loss=1.7104 | Contact Loss=0.0454 | Total Loss=1.7149 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0075
+2026-07-17 00:50:53,322 INFO protliggnn - Epoch 046 val diagnostics: Affinity Loss=1.9620 | Contact Loss=0.0459 | Total Loss=1.9666 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0091
+2026-07-17 00:51:43,398 INFO protliggnn - Epoch 047 train loss=1.6145 PCC=0.7236 Spearman=0.7088 RMSE=1.2689 MAE=0.9973 R2=0.4962
+2026-07-17 00:51:43,398 INFO protliggnn - Epoch 047 val loss=2.4919 PCC=0.6302 Spearman=0.5400 RMSE=1.5771 MAE=1.2405 R2=0.1379
+2026-07-17 00:51:43,398 INFO protliggnn - Epoch 047 train diagnostics: Affinity Loss=1.6100 | Contact Loss=0.0453 | Total Loss=1.6145 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0076
+2026-07-17 00:51:43,398 INFO protliggnn - Epoch 047 val diagnostics: Affinity Loss=2.4873 | Contact Loss=0.0457 | Total Loss=2.4919 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0064
+2026-07-17 00:52:23,349 INFO protliggnn - Epoch 048 train loss=1.5112 PCC=0.7535 Spearman=0.7516 RMSE=1.2275 MAE=0.9726 R2=0.5285
+2026-07-17 00:52:23,350 INFO protliggnn - Epoch 048 val loss=1.6842 PCC=0.6478 Spearman=0.5882 RMSE=1.2960 MAE=1.0433 R2=0.4179
+2026-07-17 00:52:23,350 INFO protliggnn - Epoch 048 train diagnostics: Affinity Loss=1.5066 | Contact Loss=0.0452 | Total Loss=1.5112 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0073
+2026-07-17 00:52:23,350 INFO protliggnn - Epoch 048 val diagnostics: Affinity Loss=1.6796 | Contact Loss=0.0457 | Total Loss=1.6842 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0094
+2026-07-17 00:52:23,413 INFO protliggnn - Saved checkpoint for epoch 48 with validation RMSE 1.2959888900334582.
+2026-07-17 00:52:59,706 INFO protliggnn - Epoch 049 train loss=1.3463 PCC=0.7769 Spearman=0.7698 RMSE=1.1583 MAE=0.9040 R2=0.5801
+2026-07-17 00:52:59,707 INFO protliggnn - Epoch 049 val loss=2.5653 PCC=0.6224 Spearman=0.5446 RMSE=1.6002 MAE=1.2912 R2=0.1125
+2026-07-17 00:52:59,707 INFO protliggnn - Epoch 049 train diagnostics: Affinity Loss=1.3418 | Contact Loss=0.0451 | Total Loss=1.3463 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0075
+2026-07-17 00:52:59,707 INFO protliggnn - Epoch 049 val diagnostics: Affinity Loss=2.5607 | Contact Loss=0.0458 | Total Loss=2.5653 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0090
+2026-07-17 00:53:41,091 INFO protliggnn - Epoch 050 train loss=1.2688 PCC=0.7886 Spearman=0.7822 RMSE=1.1244 MAE=0.8992 R2=0.6044
+2026-07-17 00:53:41,091 INFO protliggnn - Epoch 050 val loss=1.9729 PCC=0.6141 Spearman=0.5484 RMSE=1.4030 MAE=1.1452 R2=0.3178
+2026-07-17 00:53:41,091 INFO protliggnn - Epoch 050 train diagnostics: Affinity Loss=1.2643 | Contact Loss=0.0452 | Total Loss=1.2688 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0075
+2026-07-17 00:53:41,091 INFO protliggnn - Epoch 050 val diagnostics: Affinity Loss=1.9683 | Contact Loss=0.0460 | Total Loss=1.9729 | Pos Acc=0.0000 | Neg Acc=1.0000 | Precision=0.0000 | Recall=0.0000 | F1=0.0000 | Avg Prob=0.0085
+2026-07-17 00:53:41,228 INFO protliggnn - Loaded best model from epoch 48 at D:\ProtLigGnn\experiments\run_006\checkpoint.pt
+2026-07-17 00:53:43,627 INFO protliggnn - Test loss=2.1856 PCC=0.5005 Spearman=0.4333 RMSE=1.4768 MAE=1.1862 R2=0.2268
+2026-07-17 00:53:48,005 INFO protliggnn - Wrote metrics, predictions, plots, and error analysis.
+2026-07-17 00:53:48,048 INFO protliggnn - Experiment artifacts saved to D:\ProtLigGnn\experiments\run_006

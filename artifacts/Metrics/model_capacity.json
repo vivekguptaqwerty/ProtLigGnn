@@ -1,0 +1,7 @@
+{
+  "param_count": 1396225,
+  "disk_size_mb": 5.343050003051758,
+  "batch_latency_ms": 23.891018999856897,
+  "per_complex_latency_ms": 2.986377374982112,
+  "peak_vram_mb": 30.0439453125
+}

@@ -1,0 +1,5 @@
+{
+  "summary":  "Model calibration and spatial cross-attention localization analysis. Provides Pearson correlation values between cross-attention weights and physical distance matrices.",
+  "updatedAt":  "2026-07-15T15:48:00.135129700Z",
+  "userFacing":  true
+}

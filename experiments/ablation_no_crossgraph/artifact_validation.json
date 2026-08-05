@@ -1,0 +1,115 @@
+{
+  "created_utc": "2026-07-12T08:06:23+00:00",
+  "directories": {
+    "plots": {
+      "exists": true,
+      "file_count": 7,
+      "path": "experiments\\ablation_no_crossgraph\\plots",
+      "valid": true
+    }
+  },
+  "files": {
+    "checkpoint": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\checkpoint.pt",
+      "size_bytes": 12826588
+    },
+    "config": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\config.json",
+      "size_bytes": 1402
+    },
+    "config_hash": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\config_hash.txt",
+      "size_bytes": 66
+    },
+    "dataset_hash": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\dataset_hash.json",
+      "size_bytes": 5649
+    },
+    "environment": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\environment.json",
+      "size_bytes": 1203
+    },
+    "environment_lock": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\environment.lock",
+      "size_bytes": 1203
+    },
+    "lifecycle": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\experiment_lifecycle.md",
+      "size_bytes": 342
+    },
+    "logs": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\experiment.log",
+      "size_bytes": 100084
+    },
+    "manifest": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\manifest.json",
+      "size_bytes": 4414
+    },
+    "metadata": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\metadata.json",
+      "size_bytes": 449
+    },
+    "metrics": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\metrics.json",
+      "size_bytes": 685
+    },
+    "pip_freeze": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\pip_freeze.txt",
+      "size_bytes": 1279
+    },
+    "predictions": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\predictions.csv",
+      "size_bytes": 10013
+    },
+    "requirements_lock": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\requirements.lock",
+      "size_bytes": 1327
+    },
+    "split_manifest": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\split\\metadata.json",
+      "size_bytes": 15637
+    },
+    "split_test_ids": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\split\\test_ids.txt",
+      "size_bytes": 600
+    },
+    "split_train_ids": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\split\\train_ids.txt",
+      "size_bytes": 4800
+    },
+    "split_val_ids": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\split\\val_ids.txt",
+      "size_bytes": 600
+    },
+    "split_validation": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\split_validation.json",
+      "size_bytes": 350
+    },
+    "training_history": {
+      "exists": true,
+      "path": "experiments\\ablation_no_crossgraph\\training_history.csv",
+      "size_bytes": 7978
+    }
+  },
+  "missing_or_invalid": [],
+  "valid": true
+}

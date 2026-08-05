@@ -1,0 +1,115 @@
+{
+  "created_utc": "2026-07-12T07:55:49+00:00",
+  "directories": {
+    "plots": {
+      "exists": true,
+      "file_count": 7,
+      "path": "experiments\\hpo_trial_017\\plots",
+      "valid": true
+    }
+  },
+  "files": {
+    "checkpoint": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\checkpoint.pt",
+      "size_bytes": 4443392
+    },
+    "config": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\config.json",
+      "size_bytes": 1414
+    },
+    "config_hash": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\config_hash.txt",
+      "size_bytes": 66
+    },
+    "dataset_hash": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\dataset_hash.json",
+      "size_bytes": 5577
+    },
+    "environment": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\environment.json",
+      "size_bytes": 1203
+    },
+    "environment_lock": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\environment.lock",
+      "size_bytes": 1203
+    },
+    "lifecycle": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\experiment_lifecycle.md",
+      "size_bytes": 342
+    },
+    "logs": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\experiment.log",
+      "size_bytes": 47376
+    },
+    "manifest": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\manifest.json",
+      "size_bytes": 4090
+    },
+    "metadata": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\metadata.json",
+      "size_bytes": 449
+    },
+    "metrics": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\metrics.json",
+      "size_bytes": 684
+    },
+    "pip_freeze": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\pip_freeze.txt",
+      "size_bytes": 1279
+    },
+    "predictions": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\predictions.csv",
+      "size_bytes": 10030
+    },
+    "requirements_lock": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\requirements.lock",
+      "size_bytes": 1327
+    },
+    "split_manifest": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\split\\metadata.json",
+      "size_bytes": 15637
+    },
+    "split_test_ids": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\split\\test_ids.txt",
+      "size_bytes": 600
+    },
+    "split_train_ids": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\split\\train_ids.txt",
+      "size_bytes": 4800
+    },
+    "split_val_ids": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\split\\val_ids.txt",
+      "size_bytes": 600
+    },
+    "split_validation": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\split_validation.json",
+      "size_bytes": 350
+    },
+    "training_history": {
+      "exists": true,
+      "path": "experiments\\hpo_trial_017\\training_history.csv",
+      "size_bytes": 4111
+    }
+  },
+  "missing_or_invalid": [],
+  "valid": true
+}

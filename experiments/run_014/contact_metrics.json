@@ -1,0 +1,15 @@
+{
+  "attention_entropy": 7.382474265098572,
+  "average_precision": 0.010219003822551049,
+  "balanced_accuracy": 0.5,
+  "brier_score": 0.0050438703037798405,
+  "contact_recall": 0.00918891667433098,
+  "distance_correlation": -0.03648481470067054,
+  "f1": 0.0,
+  "mcc": 0.0,
+  "pr_auc": 0.010180549830084148,
+  "precision": 0.0,
+  "recall": 0.0,
+  "roc_auc": 0.6603689460634937,
+  "topk_localization": 0.00918891667433098
+}

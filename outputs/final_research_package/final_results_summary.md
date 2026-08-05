@@ -1,0 +1,126 @@
+# Final Results Summary
+
+## Project Scope
+
+ProtLigGNN predicts protein-ligand binding affinity from paired ligand molecular graphs and protein pocket graphs. The GenAI extension adds a closed-loop workflow: generated ligands are chemically validated with RDKit, prioritized by ProtLigGNN affinity and GAPS, then secondarily checked with AutoDock Vina docking.
+
+Novelty statement: the central novelty is the closed-loop GenAI + ProtLigGNN affinity-guided ligand prioritization framework, not RDKit or AutoDock Vina themselves.
+
+RDKit and Vina are validation and filtering tools in this project. They support chemical validity and secondary docking checks, but they are not claimed as the novel contribution.
+
+## ProtLigGNN Best Model Metrics
+
+- Best run: no_crossgraph_5000_e40
+- PCC: 0.6714
+- Spearman: 0.6624
+- RMSE: 1.3722
+- MAE: 1.0677
+
+## Ablation Comparison
+
+|run_name|best_epoch|pcc|spearman|rmse|mae|
+|---|---|---|---|---|---|
+|no_crossgraph_5000_e40|16|0.6714|0.6624|1.3722|1.0677|
+|crossgraph_5000_e40|21|0.6570|0.6495|1.3853|1.0642|
+|crossgraph_attention_5000_e40|38|0.6023|0.5777|1.4905|1.1832|
+
+## Earlier Report-Asset Experiment Table
+
+|run_name|best_epoch|test_pcc|test_spearman|test_rmse|test_mae|
+|---|---|---|---|---|---|
+|crossgraph_2000|12|0.4993|0.4408|1.5642|1.189|
+|crossgraph_500|7|0.3554|0.3029|1.7626|1.33|
+|no_crossgraph_2000|15|0.511|0.4719|1.5912|1.2418|
+|no_crossgraph_500|10|0.3392|0.2688|1.7778|1.2851|
+
+## Top Known Binder Results
+
+|rank|pdb_id|predicted_affinity|true_affinity|absolute_error|
+|---|---|---|---|---|
+|1|4kb9|10.065273|11.000000|0.934727|
+|2|4yml|9.836828|8.346787|1.490041|
+|3|3o9d|9.815623|10.721247|0.905623|
+|4|4ll3|9.782945|11.568636|1.785691|
+|5|4kb9|9.756389|11.000000|1.243611|
+|6|4k6z|9.663402|8.698970|0.964432|
+|7|5kqy|9.534788|9.292430|0.242358|
+|8|4hdb|9.533960|8.050610|1.483351|
+|9|4flh|9.366637|9.000000|0.366637|
+|10|5kqy|9.251916|9.292430|0.040514|
+
+## GenAI Generation Metrics
+
+- generated_count: 10000
+- valid_count: 6056
+- unique_valid_count: 4151
+- novel_unique_count: 3894
+- validity_percentage: 60.56
+- uniqueness_percentage: 68.5435931307794
+- novelty_percentage: 93.80872079017104
+
+## GAPS Explanation
+
+GAPS means Generative Affinity Prioritization Score. In this project it combines normalized ProtLigGNN affinity, novelty, normalized QED, and diversity to rank generated molecules before docking validation.
+
+## Top Generated Candidates
+
+|smiles|predicted_affinity|gaps|qed|lipinski_violations|
+|---|---|---|---|---|
+|Cc1cccc(C(=O)NS(=O)(=O)c2cccc(C)c2)c1|7.0352373123168945|0.8775614582087589|0.943513556341748|0|
+|O=S(=O)(NC1CCCCC1)c1sccc1F|7.224965572357178|0.8579781663296215|0.9104092287525518|0|
+|COc1ccc(S(=O)(=O)Nc2ccccc2)cn1|7.321709632873535|0.8533439935407812|0.9152531359625499|0|
+|O=S(=O)(Nc1ccccc1)c1cccc(Br)c1|6.94076681137085|0.8401906989496897|0.9454441902740549|0|
+|O=S(=O)(Nc1cccc(C(F)(F)F)c1)c1cccc(Cl)c1|7.216756343841553|0.8269930392390572|0.9151114964641308|0|
+|COc1cc(C#N)ccc1C(=O)NCC1=CC=C2N=CC=C12|6.843307018280029|0.8206528694602506|0.9230711853670776|0|
+|O=c1[nH]c(S(=O)(=O)N2CCC[C@@H]2c2ccccc2)ccc1O|7.145064353942871|0.8141296144288162|0.8986603275982149|0|
+|NS(=O)(=O)c1cccc(-c2cc(C(F)(F)F)ccc2O)c1|7.368354320526123|0.789529197461591|0.8934446753782329|0|
+|Cc1ccccc1NS(=O)(=O)c1ccccc1|7.212984561920166|0.7755288284697601|0.9061288808931331|0|
+|COc1ccc(S(N)(=O)=O)nc1-c1ccc(Cl)cc1|6.39446496963501|0.774500755941818|0.9399759077706195|0|
+
+## Vina Docking Validation Results
+
+### Known Top 10
+
+|rank|pdb_id|predicted_affinity|true_affinity|abs_error|vina_score|
+|---|---|---|---|---|---|
+|1|4kb9|10.065273|11.000000|0.934727|-5.6|
+|2|4yml|9.836828|8.346787|1.490041|-9.6|
+|3|3o9d|9.815623|10.721247|0.905623|-7.6|
+|4|4ll3|9.782945|11.568636|1.785691|-9.2|
+|5|4kb9|9.756389|11.000000|1.243611|-5.4|
+|6|4k6z|9.663402|8.698970|0.964432|-7.9|
+|7|5kqy|9.534788|9.292430|0.242358|-5.2|
+|8|4hdb|9.533960|8.050610|1.483351|-5.5|
+|9|4flh|9.366637|9.000000|0.366637|-9.7|
+|10|5kqy|9.251916|9.292430|0.040514|-10.0|
+
+### Generated Top 10
+
+|rank|smiles|predicted_affinity|gaps_score|qed|lipinski_violations|vina_score|
+|---|---|---|---|---|---|---|
+|1|Cc1cccc(C(=O)NS(=O)(=O)c2cccc(C)c2)c1|7.0352373123168945|0.8775614582087589|0.943513556341748|0|-7.7|
+|2|O=S(=O)(NC1CCCCC1)c1sccc1F|7.224965572357178|0.8579781663296215|0.9104092287525518|0|-6.5|
+|3|COc1ccc(S(=O)(=O)Nc2ccccc2)cn1|7.321709632873535|0.8533439935407812|0.9152531359625499|0|-6.6|
+|4|O=S(=O)(Nc1ccccc1)c1cccc(Br)c1|6.94076681137085|0.8401906989496897|0.9454441902740549|0|-7.3|
+|5|O=S(=O)(Nc1cccc(C(F)(F)F)c1)c1cccc(Cl)c1|7.216756343841553|0.8269930392390572|0.9151114964641308|0|-7.4|
+|6|COc1cc(C#N)ccc1C(=O)NCC1=CC=C2N=CC=C12|6.843307018280029|0.8206528694602506|0.9230711853670776|0|-6.5|
+|7|O=c1[nH]c(S(=O)(=O)N2CCC[C@@H]2c2ccccc2)ccc1O|7.145064353942871|0.8141296144288162|0.8986603275982149|0|-7.6|
+|8|NS(=O)(=O)c1cccc(-c2cc(C(F)(F)F)ccc2O)c1|7.368354320526123|0.789529197461591|0.8934446753782329|0|-7.8|
+|9|Cc1ccccc1NS(=O)(=O)c1ccccc1|7.212984561920166|0.7755288284697601|0.9061288808931331|0|-6.7|
+|10|COc1ccc(S(N)(=O)=O)nc1-c1ccc(Cl)cc1|6.39446496963501|0.774500755941818|0.9399759077706195|0|-6.2|
+
+## Best Generated Molecule Result
+
+- SMILES: NS(=O)(=O)c1cccc(-c2cc(C(F)(F)F)ccc2O)c1
+- ProtLigGNN predicted affinity: 7.368354320526123
+- GAPS: 0.789529197461591
+- QED: 0.8934446753782329
+- Lipinski violations: 0
+- Vina score: -7.8
+
+## Output Evidence
+
+- ProtLigGNN comparison: outputs/comparison_all_models_5000_e40.txt
+- GenAI quality summary: outputs/genai/generated_molecule_quality_summary.json
+- Generated candidate ranking: outputs/genai/top10_generated_candidates_by_gaps.csv
+- Docking comparison: outputs/vina_validation/final_docking_comparison.md

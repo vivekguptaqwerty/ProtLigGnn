@@ -1,0 +1,8 @@
+{
+  "gradient_conflict_frequency": 0.0,
+  "gradient_conflict_magnitude": 0.0,
+  "gradient_cosine_similarity": 0.0,
+  "pcgrad_correction_magnitude": 0.0,
+  "task_agreement_score": 0.0,
+  "task_interference_score": 0.0
+}

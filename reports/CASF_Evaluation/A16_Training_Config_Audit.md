@@ -1,0 +1,67 @@
+# A16 Training Configuration Audit: CASF-2016
+
+This report reviews the training hyperparameter configurations used for each checkpoint.
+
+| Path | Epochs Requested | Epochs Completed | Batch Size | LR | Weight Decay | Max Samples |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `experiments/run_001/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_002/checkpoint.pt` | 50 | 12 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_003/checkpoint.pt` | 50 | 9 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_004/checkpoint.pt` | 50 | 23 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_005/checkpoint.pt` | 50 | 36 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_006/checkpoint.pt` | 50 | 48 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_007/checkpoint.pt` | 50 | 12 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_008/checkpoint.pt` | 50 | 12 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_009/checkpoint.pt` | 50 | 19 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_010/checkpoint.pt` | 50 | 23 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_011/checkpoint.pt` | 50 | 6 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_012/checkpoint.pt` | 50 | 13 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_013/checkpoint.pt` | 50 | 18 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_014/checkpoint.pt` | 50 | 15 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_015/checkpoint.pt` | 50 | 38 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_016/checkpoint.pt` | 50 | 14 | 8 | 0.001 | 1e-05 | 1000 |
+| `experiments/run_017/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_018/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_019/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_020/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_021/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_022/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_023/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_024/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_025/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_026/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_027/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_028/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_029/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_030/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_031/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_032/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_033/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_034/checkpoint.pt` | 2 | 1 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_035/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_036/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_037/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_038/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_039/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_040/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_041/checkpoint.pt` | 2 | 2 | 8 | 0.001 | 1e-05 | 10 |
+| `experiments/run_042/checkpoint.pt` | 5 | 2 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_043/checkpoint.pt` | 5 | 4 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_044/checkpoint.pt` | 5 | 5 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_045/checkpoint.pt` | 5 | 4 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_046/checkpoint.pt` | 5 | 2 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_047/checkpoint.pt` | 5 | 5 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_048/checkpoint.pt` | 5 | 4 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_049/checkpoint.pt` | 5 | 2 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_050/checkpoint.pt` | 5 | 5 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_051/checkpoint.pt` | 5 | 5 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_052/checkpoint.pt` | 5 | 4 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_053/checkpoint.pt` | 5 | 4 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_054/checkpoint.pt` | 5 | 4 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_055/checkpoint.pt` | 5 | 5 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_056/checkpoint.pt` | 5 | 2 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_057/checkpoint.pt` | 5 | 5 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_058/checkpoint.pt` | 5 | 2 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_059/checkpoint.pt` | 5 | 5 | 8 | 0.001 | 1e-05 | 50 |
+| `experiments/run_060/checkpoint.pt` | 5 | 2 | 8 | 0.001 | 1e-05 | 50 |
+| `outputs/best_protliggnn.pt` | 50 | 13 | 8 | 0.001 | 1e-05 | 1000 |

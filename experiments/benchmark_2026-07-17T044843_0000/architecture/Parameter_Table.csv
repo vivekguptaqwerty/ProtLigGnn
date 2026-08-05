@@ -1,0 +1,4 @@
+Module,Parameter Count,Trainable
+GNN Encoder,"850,224",True
+IRM Projector,"41,952",True
+Readout Head,"521,800",True

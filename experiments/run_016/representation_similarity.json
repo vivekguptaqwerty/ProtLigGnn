@@ -1,0 +1,9 @@
+{
+  "affinity_norm": 19.99447250366211,
+  "affinity_variance": 0.782542884349823,
+  "contact_norm": 14.335378646850586,
+  "contact_variance": 0.40165916085243225,
+  "cosine_similarity": 0.5826629400253296,
+  "shared_norm": 21.73402976989746,
+  "shared_variance": 0.9225941896438599
+}

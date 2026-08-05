@@ -1,0 +1,2 @@
+bin,count,mean_prediction,mean_true,calibration_error
+1,1,5.005470275878906,6.045757293701172,-1.0402870178222656

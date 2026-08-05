@@ -1,0 +1,84 @@
+{
+  "counts": {
+    "test": 5,
+    "train": 40,
+    "val": 5
+  },
+  "created_utc": "2026-07-17T06:10:54+00:00",
+  "effective_strategy": "random",
+  "ids": {
+    "test": [
+      "2lct",
+      "2ll6",
+      "2l98",
+      "2lo6",
+      "2l75"
+    ],
+    "train": [
+      "2lto",
+      "2ltx",
+      "2lya",
+      "2ly0",
+      "2ltv",
+      "2lbv",
+      "2lzg",
+      "2l6j",
+      "2l7u",
+      "2ltz",
+      "2lp8",
+      "2llq",
+      "2las",
+      "2m0o",
+      "2lsr",
+      "2l84",
+      "2m0u",
+      "2l65",
+      "2ltw",
+      "2m0v",
+      "2lyb",
+      "2l3r",
+      "2lwi",
+      "2l8r",
+      "2lko",
+      "2lsk",
+      "2loz",
+      "2m3o",
+      "2llo",
+      "2lk1",
+      "2lbm",
+      "2lcs",
+      "2lyw",
+      "2l8j",
+      "2lgf",
+      "2liq",
+      "2lha",
+      "2m3m",
+      "2lsv",
+      "2lsp"
+    ],
+    "val": [
+      "2lh8",
+      "2ll7",
+      "2lty",
+      "2lkk",
+      "2lnw"
+    ]
+  },
+  "num_total": 50,
+  "overlap": {
+    "train_test": [],
+    "train_val": [],
+    "val_test": []
+  },
+  "seed": 3407,
+  "split_files": {
+    "metadata": "splits\\metadata.json",
+    "test": "splits\\test_ids.txt",
+    "train": "splits\\train_ids.txt",
+    "val": "splits\\val_ids.txt"
+  },
+  "strategy": "random",
+  "test_fraction": 0.1,
+  "val_fraction": 0.1,
+  "warnings": []
+}

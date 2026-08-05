@@ -1,0 +1,1 @@
+# ProtLigGNN model package

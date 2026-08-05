@@ -1,0 +1,23 @@
+CASF-2016 benchmark completed
+Output directory: D:\ProtLigGnn\scratch\casf2016_benchmark_20260805_005632
+
+Coverage: 285/285 coreset complexes, 57 ranking clusters
+
+Scoring power:
+  Pearson R: 0.366
+  Standard deviation of fit: 2.02
+  Spearman: 0.381
+  Kendall tau: 0.254
+  Direct RMSE: 2.110
+  MAE: 1.704
+  Direct R^2: 0.055
+
+Ranking power:
+  Mean Spearman: 0.211
+  Mean Kendall tau: 0.179
+  Mean Predictive Index: 0.209
+  Top-1 success: 29.82%
+  Top-2 success: 54.39%
+  Top-3 success: 75.44%
+
+Docking/screening power not run: decoy-level model score files were not present.

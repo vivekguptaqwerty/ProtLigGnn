@@ -1,0 +1,10 @@
+Study,Model,Pooling,Fraction,RMSE,MAE,PCC
+A,ChemBERTa,graph_node_mapping,1.0,1.5034,1.1842,0.6582
+A,MolFormer,graph_node_mapping,1.0,1.5116,1.1924,0.6492
+B,ChemBERTa,graph_node_mapping,1.0,1.5034,1.1842,0.6582
+B,ChemBERTa,atom_mean,1.0,1.5486,1.2295,0.6124
+B,ChemBERTa,cls,1.0,1.5849,1.2658,0.5812
+C,baseline,none,0.1,1.6912,0.0,0.0
+C,baseline,none,1.0,1.5269,0.0,0.0
+C,chemberta,graph_node_mapping,0.1,1.6142,0.0,0.0
+C,chemberta,graph_node_mapping,1.0,1.5034,0.0,0.0

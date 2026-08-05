@@ -1,0 +1,115 @@
+{
+  "created_utc": "2026-07-12T07:20:46+00:00",
+  "directories": {
+    "plots": {
+      "exists": true,
+      "file_count": 7,
+      "path": "experiments\\hpo_dry_run\\plots",
+      "valid": true
+    }
+  },
+  "files": {
+    "checkpoint": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\checkpoint.pt",
+      "size_bytes": 4430848
+    },
+    "config": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\config.json",
+      "size_bytes": 1392
+    },
+    "config_hash": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\config_hash.txt",
+      "size_bytes": 66
+    },
+    "dataset_hash": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\dataset_hash.json",
+      "size_bytes": 5556
+    },
+    "environment": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\environment.json",
+      "size_bytes": 1203
+    },
+    "environment_lock": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\environment.lock",
+      "size_bytes": 1203
+    },
+    "lifecycle": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\experiment_lifecycle.md",
+      "size_bytes": 342
+    },
+    "logs": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\experiment.log",
+      "size_bytes": 44796
+    },
+    "manifest": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\manifest.json",
+      "size_bytes": 3674
+    },
+    "metadata": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\metadata.json",
+      "size_bytes": 449
+    },
+    "metrics": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\metrics.json",
+      "size_bytes": 666
+    },
+    "pip_freeze": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\pip_freeze.txt",
+      "size_bytes": 1279
+    },
+    "predictions": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\predictions.csv",
+      "size_bytes": 1049
+    },
+    "requirements_lock": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\requirements.lock",
+      "size_bytes": 1327
+    },
+    "split_manifest": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\split\\metadata.json",
+      "size_bytes": 2133
+    },
+    "split_test_ids": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\split\\test_ids.txt",
+      "size_bytes": 60
+    },
+    "split_train_ids": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\split\\train_ids.txt",
+      "size_bytes": 480
+    },
+    "split_val_ids": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\split\\val_ids.txt",
+      "size_bytes": 60
+    },
+    "split_validation": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\split_validation.json",
+      "size_bytes": 347
+    },
+    "training_history": {
+      "exists": true,
+      "path": "experiments\\hpo_dry_run\\training_history.csv",
+      "size_bytes": 648
+    }
+  },
+  "missing_or_invalid": [],
+  "valid": true
+}

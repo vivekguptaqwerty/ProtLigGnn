@@ -1,0 +1,18 @@
+# LigProtGNN-X v4.0 Master Configuration
+model:
+  name: "ligprotgnnx"
+  dim: 256
+
+training:
+  batch_size: 8
+  epochs: 50
+  lr: 0.001
+  weight_decay: 1e-5
+  seed: 42
+  precision: "16-mixed"
+
+logging:
+  mlflow:
+    experiment_name: "ligprotgnnx_v4_0"
+  wandb:
+    project: "ligprotgnnx"

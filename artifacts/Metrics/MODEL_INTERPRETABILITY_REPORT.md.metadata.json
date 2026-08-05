@@ -1,0 +1,5 @@
+{
+  "summary":  "Model interpretability report for ProtLigGNN, analyzing attention distributions, head entropy, spatial distance correlations, and defining scientific boundaries for the GNN's predictions.",
+  "updatedAt":  "2026-07-12T16:31:55.215133100Z",
+  "userFacing":  true
+}

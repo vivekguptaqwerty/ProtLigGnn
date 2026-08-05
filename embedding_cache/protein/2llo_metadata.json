@@ -1,0 +1,9 @@
+{
+    "cache_schema_version": "1.0",
+    "embedding_model": "esm2",
+    "embedding_revision": "emulator",
+    "projection_dim": 256,
+    "sequence_hash": "bbe216adc5530a2069b9ce0f4a78c44560c1a7de86eb1b1a8f808a0964c8b586",
+    "created_time": "2026-07-17T06:08:29Z",
+    "checksum": 20461.828125
+}

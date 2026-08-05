@@ -1,0 +1,44 @@
+{
+  "counts": {
+    "test": 1,
+    "train": 8,
+    "val": 1
+  },
+  "created_utc": "2026-07-17T04:53:47+00:00",
+  "effective_strategy": "random",
+  "ids": {
+    "test": [
+      "2l8r"
+    ],
+    "train": [
+      "2l8j",
+      "2l3r",
+      "2las",
+      "2l98",
+      "2l75",
+      "2l84",
+      "2l65",
+      "2l7u"
+    ],
+    "val": [
+      "2l6j"
+    ]
+  },
+  "num_total": 10,
+  "overlap": {
+    "train_test": [],
+    "train_val": [],
+    "val_test": []
+  },
+  "seed": 2024,
+  "split_files": {
+    "metadata": "splits\\metadata.json",
+    "test": "splits\\test_ids.txt",
+    "train": "splits\\train_ids.txt",
+    "val": "splits\\val_ids.txt"
+  },
+  "strategy": "random",
+  "test_fraction": 0.1,
+  "val_fraction": 0.1,
+  "warnings": []
+}

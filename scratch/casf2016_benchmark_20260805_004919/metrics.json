@@ -1,0 +1,46 @@
+{
+  "run_timestamp": "20260805_004919",
+  "inputs": {
+    "coreset": "D:\\ProtLigGnn\\data\\CASF-2016\\power_scoring\\CoreSet.dat",
+    "predictions": "reports\\CASF_Evaluation\\raw_predictions\\raw_predictions.csv",
+    "preference": "positive"
+  },
+  "coverage": {
+    "official_coreset_rows": 285,
+    "prediction_rows": 193,
+    "merged_rows": 193,
+    "ranking_groups": 26
+  },
+  "scoring_power": {
+    "pearson_r": 0.35991290663628644,
+    "pearson_r_95ci": [
+      0.2491692373466793,
+      0.46351180784119694
+    ],
+    "standard_deviation_of_fit": 2.0880539390524118,
+    "regression_intercept": 0.8603096236032082,
+    "regression_slope": 0.9797000759542572,
+    "spearman": 0.37505362565394373,
+    "kendall_tau": 0.24928426338667145,
+    "direct_rmse": 2.2101405538632495,
+    "direct_rmse_95ci": [
+      2.010175776017566,
+      2.4030446419442026
+    ],
+    "mae": 1.8057500095070953,
+    "r2_direct": 0.019691864953312876
+  },
+  "ranking_power": {
+    "mean_spearman": 0.3461538461538461,
+    "mean_kendall_tau": 0.2692307692307692,
+    "mean_predictive_index": 0.3517378462997475,
+    "top1_success_rate": 0.4230769230769231,
+    "top2_success_rate": 0.6153846153846154,
+    "top3_success_rate": 0.8461538461538461
+  },
+  "not_run": {
+    "docking_power": "requires pose-level score files for CASF decoys_docking",
+    "forward_screening_power": "requires target-ligand decoy score files for CASF decoys_screening",
+    "reverse_screening_power": "requires ligand-target decoy score files for CASF decoys_screening"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "summary":  "Environment validation record confirming successful CUDA detection, GPU tensor operations, and PyG extensions load.",
+  "updatedAt":  "2026-07-11T16:06:12.245076200Z",
+  "userFacing":  true
+}

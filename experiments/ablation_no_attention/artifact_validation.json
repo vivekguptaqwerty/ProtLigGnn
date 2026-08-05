@@ -1,0 +1,115 @@
+{
+  "created_utc": "2026-07-12T08:08:10+00:00",
+  "directories": {
+    "plots": {
+      "exists": true,
+      "file_count": 7,
+      "path": "experiments\\ablation_no_attention\\plots",
+      "valid": true
+    }
+  },
+  "files": {
+    "checkpoint": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\checkpoint.pt",
+      "size_bytes": 12826588
+    },
+    "config": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\config.json",
+      "size_bytes": 1401
+    },
+    "config_hash": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\config_hash.txt",
+      "size_bytes": 66
+    },
+    "dataset_hash": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\dataset_hash.json",
+      "size_bytes": 5641
+    },
+    "environment": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\environment.json",
+      "size_bytes": 1203
+    },
+    "environment_lock": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\environment.lock",
+      "size_bytes": 1203
+    },
+    "lifecycle": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\experiment_lifecycle.md",
+      "size_bytes": 342
+    },
+    "logs": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\experiment.log",
+      "size_bytes": 49866
+    },
+    "manifest": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\manifest.json",
+      "size_bytes": 4379
+    },
+    "metadata": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\metadata.json",
+      "size_bytes": 449
+    },
+    "metrics": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\metrics.json",
+      "size_bytes": 687
+    },
+    "pip_freeze": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\pip_freeze.txt",
+      "size_bytes": 1279
+    },
+    "predictions": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\predictions.csv",
+      "size_bytes": 10036
+    },
+    "requirements_lock": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\requirements.lock",
+      "size_bytes": 1327
+    },
+    "split_manifest": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\split\\metadata.json",
+      "size_bytes": 15637
+    },
+    "split_test_ids": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\split\\test_ids.txt",
+      "size_bytes": 600
+    },
+    "split_train_ids": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\split\\train_ids.txt",
+      "size_bytes": 4800
+    },
+    "split_val_ids": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\split\\val_ids.txt",
+      "size_bytes": 600
+    },
+    "split_validation": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\split_validation.json",
+      "size_bytes": 350
+    },
+    "training_history": {
+      "exists": true,
+      "path": "experiments\\ablation_no_attention\\training_history.csv",
+      "size_bytes": 7971
+    }
+  },
+  "missing_or_invalid": [],
+  "valid": true
+}
